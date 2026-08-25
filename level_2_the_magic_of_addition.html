@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Symbol Identification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-tertiary-fixed": "#250059",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "primary": "#0059bb",
+                        "outline-variant": "#c1c6d7",
+                        "tertiary-fixed-dim": "#d3bbff",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#005bc0",
+                        "tertiary-container": "#8b4ef7",
+                        "on-primary-fixed": "#001a41",
+                        "on-primary-container": "#fefcff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface": "#f8f9ff",
+                        "on-secondary-container": "#00714d",
+                        "on-surface": "#121c2a",
+                        "tertiary-fixed": "#ebddff",
+                        "background": "#f8f9ff",
+                        "secondary-container": "#6cf8bb",
+                        "primary-fixed": "#d8e2ff",
+                        "tertiary": "#712edd",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-container": "#0070ea",
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#004493",
+                        "inverse-primary": "#adc7ff",
+                        "error": "#ba1a1a",
+                        "on-background": "#121c2a",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-high": "#dee9fc",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5b00c5",
+                        "outline": "#717786",
+                        "on-surface-variant": "#414754",
+                        "surface-container-highest": "#d9e3f6",
+                        "surface-container": "#e6eeff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "secondary": "#006c49",
+                        "inverse-surface": "#27313f",
+                        "surface-dim": "#d0dbed",
+                        "surface-variant": "#d9e3f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "16px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .card-shadow { box-shadow: 0 4px 8px rgba(0, 89, 187, 0.1); }
+        .btn-shadow { box-shadow: 0 4px 12px rgba(0, 112, 234, 0.2); border-top: 1px solid rgba(255,255,255,0.2); }
+        .interactive-area { border: 2px dashed #0059bb; border-radius: 0.75rem; min-height: 200px; display: flex; align-items: center; justify-content: center; background-color: #f8f9ff; transition: all 0.3s ease; }
+        .interactive-area.drag-over { background-color: #eff4ff; border-style: solid; border-color: #6cf8bb; }
+        .draggable-item { width: 64px; height: 64px; background-color: #0070ea; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: grab; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .draggable-item:active { cursor: grabbing; transform: scale(0.95); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-headline-lg text-headline-lg w-full top-0 sticky shadow-sm dark:bg-surface-container-low shadow-sm z-50">
+<div class="flex justify-between items-center px-margin-mobile py-unit h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/10 transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-display-lg text-headline-lg text-primary dark:text-primary-fixed-dim">MathQuest</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/10 transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</button>
+<button class="text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/10 transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</button>
+<button class="text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/10 transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 max-w-container-max mx-auto w-full">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-base px-unit bg-surface-container dark:bg-surface-container-low shadow-sm w-64 fixed left-0 top-16 z-40">
+<div class="px-4 py-6 border-b border-outline-variant mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-lg">L12</div>
+<div>
+<div class="font-headline-lg text-primary dark:text-primary-fixed-dim text-sm font-bold">Level 12 Learner</div>
+<div class="text-xs text-on-surface-variant">4,250 XP total</div>
+</div>
+</div>
+</div>
+<ul class="flex flex-col gap-2 flex-1 overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/20 dark:hover:bg-primary-container/30 transition-all active:translate-x-1 transition-transform" href="mathquest_dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary dark:text-primary-fixed-dim font-bold border-r-4 border-primary hover:bg-primary-container/20 dark:hover:bg-primary-container/30 transition-all active:translate-x-1 transition-transform bg-primary-container/10" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Library</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/20 dark:hover:bg-primary-container/30 transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span>Calculator</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/20 dark:hover:bg-primary-container/30 transition-all active:translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span>Rankings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-outline-variant hover:bg-primary-container/20 dark:hover:bg-primary-container/30 transition-all active:translate-x-1 transition-transform" href="user_profile_sign_up.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto px-4 pt-4 border-t border-outline-variant">
+<button class="w-full bg-tertiary text-on-tertiary font-bold py-3 rounded-lg hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors shadow-md">Unlock Premium</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-gutter">
+<!-- Breadcrumb / Level Header -->
+<div class="mb-8">
+<span class="text-sm font-bold text-tertiary uppercase tracking-wider">Level 2</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mt-2">Symbol Identification</h1>
+<p class="text-on-surface-variant mt-2 max-w-2xl">Master the basic building blocks of mathematics. Today, we discover the hero of bringing things together.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Symbol Display (Col 1-8) -->
+<section class="md:col-span-8 bg-surface-container-lowest rounded-xl card-shadow p-8 flex flex-col items-center justify-center relative overflow-hidden min-h-[400px]">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="text-[180px] leading-none text-primary font-display-lg font-black animate-pulse drop-shadow-xl">+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-4">Plus</h2>
+<span class="inline-block bg-secondary-container text-on-secondary-container font-bold px-4 py-1 rounded-full text-sm mt-2">Addition</span>
+</div>
+</section>
+<!-- Info Sidebar (Col 9-12) -->
+<section class="md:col-span-4 flex flex-col gap-6">
+<!-- Origin Card -->
+<div class="bg-surface-container-lowest rounded-xl card-shadow p-6 border-t-4 border-tertiary">
+<div class="flex items-center gap-2 mb-4 text-tertiary">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<h3 class="font-headline-lg text-lg font-bold">Origin Story</h3>
+</div>
+<p class="text-on-surface-variant text-sm">
+                            The plus sign is an abbreviation of the Latin word <strong>"et"</strong>, which means "and". Over centuries, hurried writers simplified the letters 'e' and 't' into the cross shape we use today!
+                        </p>
+</div>
+<!-- Usage Card -->
+<div class="bg-surface-container-lowest rounded-xl card-shadow p-6 border-t-4 border-secondary">
+<div class="flex items-center gap-2 mb-4 text-secondary">
+<span class="material-symbols-outlined" data-icon="group_add">group_add</span>
+<h3 class="font-headline-lg text-lg font-bold">How to use it</h3>
+</div>
+<p class="text-on-surface-variant text-sm">
+                            When you want to combine groups, add things together, or grow a number larger, the plus sign is your tool. It brings things together to make a <em>sum</em>.
+                        </p>
+</div>
+</section>
+<!-- Interactive Playground (Full Width) -->
+<section class="md:col-span-12 bg-surface-container-lowest rounded-xl card-shadow p-8 mt-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Interactive Playground</h3>
+<span class="text-sm bg-primary-container text-on-primary-container px-3 py-1 rounded-full">Drag &amp; Drop</span>
+</div>
+<p class="text-on-surface-variant mb-6 text-center">Drag the blue circles into the dotted area to see what happens when they combine!</p>
+<div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+<!-- Source Area -->
+<div class="flex gap-4 p-4 bg-surface-container rounded-xl">
+<div class="draggable-item" draggable="true" id="item1">1</div>
+<div class="draggable-item" draggable="true" id="item2">2</div>
+</div>
+<!-- Drop Zone -->
+<div class="flex-1 w-full max-w-md">
+<div class="interactive-area" id="dropzone">
+<span class="text-outline-variant font-bold text-lg" id="dropprompt">Drop items here</span>
+<div class="hidden flex items-center gap-4 text-4xl font-display-lg text-on-surface" id="result-display">
+<!-- Populated by JS -->
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Action -->
+<div class="md:col-span-12 flex justify-end mt-8">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 btn-shadow hover:bg-on-secondary-container transition-colors">
+                        Continue to Subtraction
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Simple Drag and Drop Logic
+        const draggables = document.querySelectorAll('.draggable-item');
+        const dropzone = document.getElementById('dropzone');
+        const prompt = document.getElementById('dropprompt');
+        const resultDisplay = document.getElementById('result-display');
+        let itemsInZone = 0;
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', () => {
+                draggable.classList.add('opacity-50');
+            });
+
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('opacity-50');
+            });
+        });
+
+        dropzone.addEventListener('dragover', e => {
+            e.preventDefault();
+            dropzone.classList.add('drag-over');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('drag-over');
+        });
+
+        dropzone.addEventListener('drop', e => {
+            e.preventDefault();
+            dropzone.classList.remove('drag-over');
+            
+            itemsInZone++;
+            
+            if(itemsInZone === 1) {
+                prompt.textContent = "Drop one more!";
+            } else if (itemsInZone === 2) {
+                prompt.classList.add('hidden');
+                resultDisplay.classList.remove('hidden');
+                
+                // Show the magical combination
+                resultDisplay.innerHTML = `
+                    <div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center text-xl">1</div>
+                    <div class="text-primary font-black text-6xl animate-bounce">+</div>
+                    <div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center text-xl">2</div>
+                    <div class="text-on-surface font-black">=</div>
+                    <div class="w-16 h-16 bg-secondary text-on-secondary rounded-full flex items-center justify-center text-2xl font-bold shadow-lg ring-4 ring-secondary-container">3</div>
+                `;
+                
+                // Disable further dragging for demo simplicity
+                draggables.forEach(d => d.setAttribute('draggable', false));
+                dropzone.style.backgroundColor = '#eff4ff'; // Keep light blue bg
+                dropzone.style.borderColor = '#6cf8bb'; // Keep green border
+            }
+        });
+    </script>
+</body></html>

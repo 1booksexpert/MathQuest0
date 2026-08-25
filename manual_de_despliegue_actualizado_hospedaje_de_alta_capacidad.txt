@@ -1,0 +1,22 @@
+# Manual de Despliegue Seguro: Vercel / Netlify (Alternativa de Alta Escalabilidad)
+
+Para garantizar un hospedaje de por vida con límites más generosos y seguridad robusta, utilizaremos una plataforma líder en despliegue continuo (CI/CD).
+
+## 1. Preparación del Proyecto
+1. Asegúrate de que el código de MathQuest esté en un repositorio de **GitHub**, **GitLab** o **Bitbucket**.
+
+## 2. Configuración del Hospedaje (Vercel/Netlify)
+1. Crea una cuenta en la plataforma elegida vinculándola a tu repositorio.
+2. Selecciona "New Project" y elige el repositorio de MathQuest.
+3. El sistema detectará automáticamente el framework.
+
+## 3. Seguridad de Nivel Empresarial
+A pesar de ser más flexible en créditos, mantendremos la seguridad:
+1. **SSL/TLS Automático**: Cifrado de datos en tránsito por defecto.
+2. **Edge Network**: Distribución global de contenido para mitigar ataques DDoS de forma nativa.
+3. **Firewall de Aplicación (WAF)**: Configura reglas básicas para evitar inyecciones SQL y ataques XSS.
+4. **Environment Variables**: Define `SUPABASE_URL` y `SUPABASE_ANON_KEY` en la sección de configuración del proyecto.
+
+## 4. Estrategia "Zero Cost" & Escalabilidad
+1. **Límites de Ancho de Banda**: Estas plataformas ofrecen terabytes de transferencia en sus capas gratuitas, ideales para apps con muchos activos visuales como MathQuest.
+2. **Serverless Functions**: La lógica de backend se ejecuta solo cuando es necesario, ahorrando recursos y aumentando la resistencia contra picos de tráfico.

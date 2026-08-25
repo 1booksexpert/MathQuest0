@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Entrenamiento: Número 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#121c2a",
+                        "on-primary-container": "#fefcff",
+                        "tertiary-container": "#8b4ef7",
+                        "on-tertiary-fixed": "#250059",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-tertiary-fixed-variant": "#5b00c5",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#27313f",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed-dim": "#d3bbff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#d9e3f6",
+                        "secondary": "#006c49",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed": "#001a41",
+                        "on-tertiary-container": "#fffbff",
+                        "outline-variant": "#c1c6d7",
+                        "on-secondary-container": "#00714d",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "outline": "#717786",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#004493",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface-variant": "#414754",
+                        "tertiary": "#712edd",
+                        "on-background": "#121c2a",
+                        "surface-container-highest": "#d9e3f6",
+                        "surface-container-high": "#dee9fc",
+                        "surface-tint": "#005bc0",
+                        "primary": "#0059bb",
+                        "tertiary-fixed": "#ebddff",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-dim": "#d0dbed",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#002113",
+                        "inverse-primary": "#adc7ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "primary-container": "#0070ea",
+                        "surface-container": "#e6eeff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "base": "16px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "code-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "code-sm": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }]
+                    },
+                    keyframes: {
+                        bounceSoft: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-10px) scale(1.05)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(0, 89, 187, 0.4)' },
+                            '50%': { boxShadow: '0 0 0 15px rgba(0, 89, 187, 0)' },
+                        }
+                    },
+                    animation: {
+                        'bounce-soft': 'bounceSoft 2s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md h-screen w-screen overflow-hidden flex flex-col items-center justify-between select-none">
+<!-- Top Action: Exit task (Navigation suppressed due to task-focus constraint) -->
+<header class="w-full p-margin-mobile flex justify-start absolute top-0 left-0 z-10">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface-variant shadow-sm active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[28px]">close</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-sm flex flex-col items-center justify-center pt-16 pb-8 px-margin-mobile gap-8 z-0">
+<!-- Audio Cue -->
+<button class="flex flex-col items-center gap-2 animate-bounce-soft active:scale-95 transition-transform cursor-pointer" onclick="playAudio()">
+<div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center shadow-lg relative overflow-hidden">
+<div class="absolute inset-0 bg-white opacity-20 scale-0 rounded-full transition-transform duration-300" id="audio-ripple"></div>
+<span class="material-symbols-outlined text-[40px] text-on-secondary-container">volume_up</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary text-center">¡Uno!</span>
+</button>
+<!-- Visual Subject -->
+<div class="w-full flex-1 flex items-center justify-center min-h-[200px]">
+<img class="w-4/5 max-h-full object-contain animate-bounce-soft" data-alt="A bright, cheerful, large 3D illustration of a single red balloon floating against a pristine white background. The style is highly playful and tailored for toddlers, featuring soft, diffused lighting and vibrant, engaging colors consistent with a modern educational app's light mode theme. There are no distracting background elements, ensuring absolute focus on the single balloon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYa5enqHYqLgJZKhOk2_zN3VCdxd6g6V6OCubOJQaZ11SpDeNUAyrDEeOKTcjYUGt6VhE0fxrFmT5HxrTZu8Y9zPt6mLsMfmWsCY0AGXVuyzowl3F2imYs4oVSdda8d0NMrlOZCICQVY1b3a0PkHTOda07Z3fmYnnZHUe_8JdennIqM6Trl8DUIsLEnf6yqxtBVXw9kSmtomdcaZwXLQ0cEELY-uzlOMWFYG3zTwd_qxp4R_fBilTp" style="animation-delay: 0.5s;">
+</div>
+</main>
+<!-- Interactive Keypad Area -->
+<footer class="w-full max-w-sm p-margin-mobile pb-10 bg-surface-container-lowest rounded-t-3xl shadow-[0_-8px_24px_rgba(0,0,0,0.05)] z-10">
+<div class="grid grid-cols-3 gap-4">
+<!-- Inactive Number -->
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-primary text-on-primary border-b-4 border-primary-fixed-dim shadow-lg animate-pulse-glow hover:scale-105 active:scale-95 active:border-b-0 active:translate-y-1 transition-all duration-150">
+<span class="font-display-lg text-[40px] font-bold text-on-primary">1</span>
+</button>
+<!-- Active Target Number -->
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-primary text-on-primary border-b-4 border-primary-fixed-dim shadow-lg animate-pulse-glow hover:scale-105 active:scale-95 active:border-b-0 active:translate-y-1 transition-all duration-150">
+<span class="font-display-lg text-[40px] font-bold text-on-primary">1</span>
+</button>
+<!-- Inactive Number -->
+<button class="aspect-square flex items-center justify-center rounded-2xl bg-surface-container-highest border-b-4 border-outline-variant hover:scale-105 active:scale-95 active:border-b-0 active:translate-y-1 transition-all duration-150">
+<span class="font-display-lg text-[40px] font-bold text-on-surface-variant">3</span>
+</button>
+</div>
+</footer>
+<script>
+        function playAudio() {
+            // Simulated audio play feedback
+            const ripple = document.getElementById('audio-ripple');
+            ripple.style.transform = 'scale(2)';
+            ripple.style.opacity = '0';
+            
+            setTimeout(() => {
+                ripple.style.transition = 'none';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.opacity = '0.2';
+                
+                // trigger reflow
+                void ripple.offsetWidth;
+                
+                ripple.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease-out';
+            }, 400);
+        }
+    </script>
+
+
+</body></html>

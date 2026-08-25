@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - ¿Cuál es el 4?</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ebddff",
+                        "tertiary-fixed-dim": "#d3bbff",
+                        "surface-variant": "#d9e3f6",
+                        "on-secondary-container": "#00714d",
+                        "surface-container": "#e6eeff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#27313f",
+                        "background": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed-variant": "#5b00c5",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-container": "#fefcff",
+                        "secondary-container": "#6cf8bb",
+                        "on-background": "#121c2a",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#dee9fc",
+                        "surface-dim": "#d0dbed",
+                        "primary": "#0059bb",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface": "#121c2a",
+                        "inverse-primary": "#adc7ff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#005bc0",
+                        "on-primary-fixed": "#001a41",
+                        "outline": "#717786",
+                        "outline-variant": "#c1c6d7",
+                        "tertiary-container": "#8b4ef7",
+                        "primary-fixed-dim": "#adc7ff",
+                        "secondary": "#006c49",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-surface-variant": "#414754",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#250059",
+                        "tertiary": "#712edd",
+                        "primary-fixed": "#d8e2ff",
+                        "primary-container": "#0070ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "16px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "code-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .jumbo-btn {
+            box-shadow: 0 8px 0 0 rgba(0, 89, 187, 0.3), 0 15px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .jumbo-btn:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 0 rgba(0, 89, 187, 0.3), 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .jumbo-btn-wrong {
+            box-shadow: 0 8px 0 0 rgba(113, 119, 134, 0.3), 0 15px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .jumbo-btn-wrong:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 0 rgba(113, 119, 134, 0.3), 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bounce-animation {
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md">
+<!-- Top Navigation Bar (Hidden as this is a focused task screen, but kept structurally for context) -->
+<nav aria-label="Main Navigation" class="hidden">
+<!-- Suppressed for focused journey -->
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center p-gutter max-w-container-max mx-auto w-full relative h-screen">
+<!-- Pedagogía Button (Discreet Corner) -->
+<button class="absolute top-gutter right-gutter flex items-center gap-2 text-outline hover:text-primary transition-colors bg-surface-container-lowest rounded-full px-4 py-2 shadow-sm">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-body-md text-body-md">Pedagogía</span>
+</button>
+<!-- Progress Bar -->
+<div class="absolute top-gutter left-0 w-full flex justify-center mt-2">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-3xl">star</span>
+</div>
+</div>
+<div class="flex flex-col items-center w-full max-w-3xl gap-12">
+<!-- Question Header -->
+<div class="text-center space-y-6">
+<h1 class="font-display-lg text-display-lg text-primary">¿Cuál es el 4?</h1>
+<!-- Pictorial Representation (4 Stars) -->
+<div class="flex gap-4 justify-center bounce-animation">
+<span class="material-symbols-outlined text-tertiary-container text-6xl" style="font-variation-settings: 'FILL' 1;">grade</span>
+<span class="material-symbols-outlined text-tertiary-container text-6xl" style="font-variation-settings: 'FILL' 1;">grade</span>
+<span class="material-symbols-outlined text-tertiary-container text-6xl" style="font-variation-settings: 'FILL' 1;">grade</span>
+<span class="material-symbols-outlined text-tertiary-container text-6xl" style="font-variation-settings: 'FILL' 1;">grade</span>
+</div>
+</div>
+<!-- Options Area (Bento-style large buttons) -->
+<div class="flex flex-col md:flex-row gap-8 w-full justify-center px-4">
+<!-- Incorrect Option (2) -->
+<button class="jumbo-btn-wrong bg-surface-container-lowest border-4 border-outline-variant rounded-3xl w-full md:w-64 h-64 flex items-center justify-center group hover:border-outline">
+<span class="text-[120px] font-display-lg font-bold text-outline-variant group-hover:text-outline transition-colors">2</span>
+</button>
+<!-- Correct Option (4) -->
+<button class="jumbo-btn bg-primary-container border-4 border-primary rounded-3xl w-full md:w-64 h-64 flex items-center justify-center group hover:bg-surface-tint">
+<span class="text-[120px] font-display-lg font-bold text-on-primary-container group-hover:text-white transition-colors">4</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

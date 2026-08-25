@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Leaderboard - MathQuest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-surface": "#121c2a",
+                    "surface-tint": "#005bc0",
+                    "surface": "#f8f9ff",
+                    "surface-container-low": "#eff4ff",
+                    "secondary": "#006c49",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary-fixed": "#001a41",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary-fixed": "#250059",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5b00c5",
+                    "secondary-container": "#6cf8bb",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary-fixed": "#002113",
+                    "surface-bright": "#f8f9ff",
+                    "surface-variant": "#d9e3f6",
+                    "on-error-container": "#93000a",
+                    "primary": "#0059bb",
+                    "tertiary-fixed": "#ebddff",
+                    "surface-dim": "#d0dbed",
+                    "tertiary-fixed-dim": "#d3bbff",
+                    "on-primary-container": "#fefcff",
+                    "primary-container": "#0070ea",
+                    "on-tertiary-container": "#fffbff",
+                    "tertiary-container": "#8b4ef7",
+                    "outline": "#717786",
+                    "surface-container-high": "#dee9fc",
+                    "secondary-fixed": "#6ffbbe",
+                    "outline-variant": "#c1c6d7",
+                    "on-surface-variant": "#414754",
+                    "inverse-primary": "#adc7ff",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-background": "#121c2a",
+                    "tertiary": "#712edd",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#e6eeff",
+                    "inverse-surface": "#27313f",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "base": "16px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "code-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "code-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar for Mobile -->
+<header class="md:hidden docked full-width top-0 shadow-sm bg-surface-container-lowest flex justify-between items-center w-full px-gutter h-16 z-50">
+<div class="font-display-lg text-display-lg text-primary tracking-tight">MathQuest</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="A detailed image of a generic user avatar placeholder, simple abstract shapes, light blue background, clean vector style, no real face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYmgqwF5rpQ78Ul7b1RvrzMvi7JSoq_7cmLUMAHx_O289hWZlXMXyxyubxvcYVUu8N1YbWWYTbBOnrLalKrbmwsw4lVoeX0kfaZ87aaY0ZlQ_zOlFFlNDehWtew2aMTlJ8PtTkmuoKDMyGtLkXaHLCUfV5reLa5GR9z09oEiPu5f2owYqg3excgPaIQ4uq6BAkuSa1mt-VFhIbwcps3SJyJa7io1ldpgdMfRnwlZ548NgZgkMICG3a"/>
+</div>
+</header>
+<!-- SideNavBar for Desktop -->
+<nav class="hidden lg:flex flex-col p-4 gap-2 h-screen w-64 fixed left-0 top-0 bg-surface shadow-md z-40 border-r border-surface-container-low">
+<div class="mb-8 px-4 flex flex-col items-center justify-center">
+<div class="font-headline-lg text-headline-lg text-primary mb-6">MathQuest</div>
+<img alt="User Rank Badge" class="w-20 h-20 mb-2 object-contain" data-alt="A highly detailed illustration of a golden rank badge, intricate geometric patterns, glowing edges, representing level 24, grand arithmetician rank, high contrast against a light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBzmFtdM-zar6GusbFh7ZnlbGL0RtvBuK-y9LdDUsBiGIBcg2t1YOTWQOXpg2G9rKjc9qkWnN1xm-2nRsYvkpVHORlOhXIRZwvHewVeTDglFluRnlTKg0lvmfydV3wWCECLy8SeckaSRQDOq-MkdLGHU3w9dlg4C-6NRD_jSis-rQBveIoWnRJit87ngIf9uaAnTiqEgDbeuP5XLL5QIkst5NYRTiOirrACxZV5xacA7q5_tvhSH0Q"/>
+<div class="font-headline-lg text-[20px] leading-[28px] font-bold text-on-surface">Level 24</div>
+<div class="font-body-md text-on-surface-variant text-sm">Grand Arithmetician</div>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1" href="mathquest_dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="calculate">calculate</span>
+<span>Calculator</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-xl font-bold active:translate-x-1 transition-transform" href="global_rankings.html">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span>Rankings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-xl transition-all active:translate-x-1" href="user_profile_sign_up.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</div>
+<div class="mt-auto px-2">
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-bold hover:shadow-md transition-shadow">Start Daily Quest</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-20 lg:pt-8 pb-24 lg:pb-8 lg:ml-64 px-margin-mobile lg:px-gutter max-w-container-max mx-auto">
+<!-- Header & Tabs -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+<div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-2">Global Rankings</h1>
+<p class="font-body-md text-on-surface-variant">See where you stand among the greatest minds.</p>
+</div>
+<div class="flex gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="px-4 py-2 bg-surface-container-lowest text-on-surface rounded shadow-sm font-bold text-sm">Global</button>
+<button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded transition-colors text-sm">Regional</button>
+<button class="px-4 py-2 text-on-surface-variant hover:bg-surface-container-highest rounded transition-colors text-sm">Friends</button>
+</div>
+</div>
+<!-- Filters & Current User Snapshot -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<div class="lg:col-span-2 flex items-center gap-4">
+<div class="flex bg-surface-container-lowest rounded-full border border-outline-variant p-1">
+<button class="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold">All Time</button>
+<button class="px-4 py-1.5 text-on-surface-variant hover:bg-surface-container-highest rounded-full text-sm transition-colors">Weekly</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm border border-primary/20 flex items-center justify-between relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-lg">
+                        #42
+                    </div>
+<div>
+<div class="font-bold text-on-surface">You</div>
+<div class="text-sm text-on-surface-variant">Lvl 24 • Grand Arithmetician</div>
+</div>
+</div>
+<div class="relative z-10 text-right">
+<div class="font-code-sm text-primary font-bold text-lg">15,420</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-wider">Power</div>
+</div>
+</div>
+</div>
+<!-- Leaderboard Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-highest overflow-hidden">
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-4 p-4 border-b border-surface-container-highest bg-surface/50 text-sm font-bold text-on-surface-variant">
+<div class="col-span-2 md:col-span-1 text-center">Rank</div>
+<div class="col-span-7 md:col-span-5">Player</div>
+<div class="col-span-3 md:col-span-3 hidden md:block text-center">Level</div>
+<div class="col-span-3 text-right">Math Power</div>
+</div>
+<!-- Table Rows -->
+<div class="flex flex-col">
+<!-- Rank 1 -->
+<div class="grid grid-cols-12 gap-4 p-4 items-center border-b border-surface-container-lowest hover:bg-surface-container-lowest transition-colors bg-surface-container-lowest">
+<div class="col-span-2 md:col-span-1 flex justify-center">
+<span class="material-symbols-outlined text-yellow-500 fill text-3xl" data-icon="trophy" data-weight="fill">trophy</span>
+</div>
+<div class="col-span-7 md:col-span-5 flex items-center gap-3">
+<img alt="Player Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A close up portrait of a fictional genius mathematician avatar, intense stare, glowing abstract background, highly detailed vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXqVjRyj11KTqxY50nPVvsAubrEH5DgIYqolcD9XvNeSzPIOGjLww15Ftj9SbCB2nARXRJj2qelRhNWlL2kXvLwB2Y1bI49xoh79akdqQuq_VAwmqbX0FBmGCUhiDAr8ycl6n7hebLZGQWUObz_UCOK1LfGZ6s1OntZ6tIx4A41vtSmIsacd99_vigU-yjHjCGy1Oif7ihiPCU3XeIv2Qx2xjmU9azKLhZeJSBixOG66nakAyXw6I7"/>
+<div>
+<div class="font-bold text-on-surface">EulerFan99</div>
+<div class="text-xs text-on-surface-variant hidden md:block">Supreme Calculator</div>
+</div>
+</div>
+<div class="col-span-3 md:col-span-3 hidden md:flex justify-center items-center">
+<span class="bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded-md text-xs font-bold">Lvl 99</span>
+</div>
+<div class="col-span-3 text-right font-code-sm text-primary font-bold">
+                        124,500
+                    </div>
+</div>
+<!-- Rank 2 -->
+<div class="grid grid-cols-12 gap-4 p-4 items-center border-b border-surface-container-lowest hover:bg-surface-container-lowest transition-colors">
+<div class="col-span-2 md:col-span-1 flex justify-center">
+<span class="material-symbols-outlined text-gray-400 fill text-2xl" data-icon="trophy" data-weight="fill">trophy</span>
+</div>
+<div class="col-span-7 md:col-span-5 flex items-center gap-3">
+<img alt="Player Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a young female mathematician avatar, wearing glasses, determined expression, futuristic classroom background, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9hPQQfK6bWUIQ7LRRMCRxZyBqIpIKW2wo_rtOp2DP76TMjKlhPDNuZJcbpvAIt5MYT7X-5UFZEB6ZlpTgOMqHIzQLp5mY_WCQ-daHF-41Slx1eeDZqOorjZNnWctceJ4c4AQe812V612qvmscDqKV2B3F8E8r09iCFUVMAtG8RRsYAjxl4HCbDpCEVE2y033xhujGOHoLaUfo27tYMkpNTS1ue3ExBv4uktjwkj913YcsqO5mCNAL"/>
+<div>
+<div class="font-bold text-on-surface">AdaLovelace_X</div>
+<div class="text-xs text-on-surface-variant hidden md:block">Logic Master</div>
+</div>
+</div>
+<div class="col-span-3 md:col-span-3 hidden md:flex justify-center items-center">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md text-xs font-bold">Lvl 95</span>
+</div>
+<div class="col-span-3 text-right font-code-sm text-on-surface font-bold">
+                        118,200
+                    </div>
+</div>
+<!-- Rank 3 -->
+<div class="grid grid-cols-12 gap-4 p-4 items-center border-b border-surface-container-lowest hover:bg-surface-container-lowest transition-colors">
+<div class="col-span-2 md:col-span-1 flex justify-center">
+<span class="material-symbols-outlined text-amber-700 fill text-xl" data-icon="trophy" data-weight="fill">trophy</span>
+</div>
+<div class="col-span-7 md:col-span-5 flex items-center gap-3">
+<img alt="Player Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A stylized avatar of an owl wearing a graduation cap, clever expression, set against a blackboard with equations, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5x9hHUWLKb84NhyqxrX-WWJ2WbESwpAZCERYGKM19RJQhY0_3hSf6eXuzgS-G8pWuv5sjLuuYum6zsF6QAFSQPagBYSn5uCyjZvO53aEV4ljDO8svejFrKDrP42CmzAYi-Jkpczw0G8K_6idvucWgP6g6X26P3cB-5uNLf-NobFbw1hqX0MoqtqKkPyydLs6RiWutp5pY9FDBXDJWthZiE7ixLTKcIlSzg4VopE6uXyAxZNskgqDv"/>
+<div>
+<div class="font-bold text-on-surface">NightOwlMath</div>
+<div class="text-xs text-on-surface-variant hidden md:block">Equation Solver</div>
+</div>
+</div>
+<div class="col-span-3 md:col-span-3 hidden md:flex justify-center items-center">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md text-xs font-bold">Lvl 92</span>
+</div>
+<div class="col-span-3 text-right font-code-sm text-on-surface font-bold">
+                        110,850
+                    </div>
+</div>
+<!-- Ellipsis -->
+<div class="flex justify-center p-2 text-outline-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</div>
+<!-- Current User Row -->
+<div class="grid grid-cols-12 gap-4 p-4 items-center border-y-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors">
+<div class="col-span-2 md:col-span-1 flex justify-center font-bold text-primary">
+                        42
+                    </div>
+<div class="col-span-7 md:col-span-5 flex items-center gap-3">
+<img alt="Player Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A user profile picture, a simple graphic of a lightbulb, glowing blue, clean simple background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFXe1EU2TZWi0L2qOmy6Q4fPd-pmfv4EpbPCDaaUHZX3Vz2oORbiyyRFvyMt4A4Fe0lcGFJSAS7ctWsnM52iz1O9u4NQ37PFvR_hE7CipY-YdJQd9MPFiv5RDKp3anpihMFsOvnoQvlf_LpAdzvxAfOIG9aFsmiHE92w_k3gKwR-emdD_w-OHdcZy9tC--Tc9GjJ5vin3PggKHjMcMdb5VK7icb0YArdlo45cFoaYTFQLUMlbmkvnG"/>
+<div>
+<div class="font-bold text-primary">You</div>
+<div class="text-xs text-on-surface-variant hidden md:block">Grand Arithmetician</div>
+</div>
+</div>
+<div class="col-span-3 md:col-span-3 hidden md:flex justify-center items-center">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md text-xs font-bold">Lvl 24</span>
+</div>
+<div class="col-span-3 text-right font-code-sm text-primary font-bold">
+                        15,420
+                    </div>
+</div>
+<!-- Rank 43 -->
+<div class="grid grid-cols-12 gap-4 p-4 items-center border-b border-surface-container-lowest hover:bg-surface-container-lowest transition-colors">
+<div class="col-span-2 md:col-span-1 flex justify-center text-on-surface-variant font-bold">
+                        43
+                    </div>
+<div class="col-span-7 md:col-span-5 flex items-center gap-3">
+<img alt="Player Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a male student avatar, casual look, focused expression, library background, high quality rendering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDvbLsNg8NUmnW7C-LB6TpOWaxcdnSJVoFHF36teMKWJ2trfZP0SvqMktOqfdHbZ1Psy24__KElzkqjwChP0p7UQrSCY-HO-bGNmTGTCXI5fCxBDWj--8aj0pEBOdcC_zv1xIKQHoT4063XHDWmdemqRfSFFLfeE8jxF5VUrMEUHI-Qm58obX18AMB4oZcKq80qA_jxlv5gVv2_1zErGYGG0ZIN0HIvw1AcBHx-pBbWwDVqPVu--at"/>
+<div>
+<div class="font-bold text-on-surface">Mathlete99</div>
+<div class="text-xs text-on-surface-variant hidden md:block">Number Cruncher</div>
+</div>
+</div>
+<div class="col-span-3 md:col-span-3 hidden md:flex justify-center items-center">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-md text-xs font-bold">Lvl 24</span>
+</div>
+<div class="col-span-3 text-right font-code-sm text-on-surface font-bold">
+                        15,380
+                    </div>
+</div>
+</div>
+<div class="p-4 flex justify-center border-t border-surface-container-highest">
+<button class="px-6 py-2 border border-outline text-primary hover:bg-primary-container hover:text-on-primary-container rounded-lg transition-colors font-bold text-sm">Load More</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar for Mobile -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe shadow-[0_-4px_10px_rgba(0,0,0,0.05)] bg-surface-container-lowest rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high scale-110 transition-transform duration-200 p-2 rounded-lg" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-xs mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high scale-110 transition-transform duration-200 p-2 rounded-lg" href="mathquest_gameplay_calculator.html">
+<span class="material-symbols-outlined" data-icon="extension">extension</span>
+<span class="text-xs mt-1">Solve</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-110 transition-transform duration-200" href="global_rankings.html">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="text-xs mt-1 font-bold">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-container-high scale-110 transition-transform duration-200 p-2 rounded-lg" href="user_profile_sign_up.html">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-xs mt-1">Account</span>
+</a>
+</nav>
+</body></html>

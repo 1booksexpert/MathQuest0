@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MathQuest - Registration &amp; Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-surface": "#121c2a",
+                      "surface-tint": "#005bc0",
+                      "surface": "#f8f9ff",
+                      "surface-container-low": "#eff4ff",
+                      "secondary": "#006c49",
+                      "background": "#f8f9ff",
+                      "surface-container-highest": "#d9e3f6",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#001a41",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#00714d",
+                      "secondary-fixed-dim": "#4edea3",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary-fixed": "#250059",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#5b00c5",
+                      "secondary-container": "#6cf8bb",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-secondary-fixed": "#002113",
+                      "surface-bright": "#f8f9ff",
+                      "surface-variant": "#d9e3f6",
+                      "on-error-container": "#93000a",
+                      "primary": "#0059bb",
+                      "tertiary-fixed": "#ebddff",
+                      "surface-dim": "#d0dbed",
+                      "tertiary-fixed-dim": "#d3bbff",
+                      "on-primary-container": "#fefcff",
+                      "primary-container": "#0070ea",
+                      "on-tertiary-container": "#fffbff",
+                      "tertiary-container": "#8b4ef7",
+                      "outline": "#717786",
+                      "surface-container-high": "#dee9fc",
+                      "secondary-fixed": "#6ffbbe",
+                      "outline-variant": "#c1c6d7",
+                      "on-surface-variant": "#414754",
+                      "inverse-primary": "#adc7ff",
+                      "primary-fixed-dim": "#adc7ff",
+                      "on-background": "#121c2a",
+                      "tertiary": "#712edd",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#e6eeff",
+                      "inverse-surface": "#27313f",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "base": "16px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-16">
+<!-- Brand -->
+<div class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim tracking-tight">
+                MathQuest
+            </div>
+<!-- Navigation Links (Hidden on small screens, visible on md+) -->
+<nav class="hidden md:flex space-x-6">
+<!-- Registration/Profile page doesn't map directly to these main tabs, so leaving them inactive to represent transactional state -->
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform" href="#">Practice</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform" href="#">Quests</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform" href="#">Leaderboard</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-colors scale-95 active:scale-90 transition-transform" href="#">Curriculum</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center space-x-4">
+<div class="flex space-x-2">
+<button aria-label="Notifications" class="p-2 text-on-surface-variant hover:text-primary-container transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Settings" class="p-2 text-on-surface-variant hover:text-primary-container transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-bold hover:bg-primary-container hover:text-on-primary-container transition-colors scale-95 active:scale-90 transition-transform shadow-md">
+                    Upgrade
+                </button>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="A stylized, low-poly 3D render of a cute robot avatar face, bright and colorful, suitable for a kids learning app profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCovcHTagH4uPqvu-XEYqdYJ5e_35ngZVjQWE4GwDLzBoyiLK35Y5EPNINvgg4sOz03UG6heExuZotjAluLuxw4_FLLo3PXIKHCNjIo2o0DPdtvtcMeLFglbQv4qLSGm9SB3rw51dyuUP0JWVJW1T5eAhTgwqd5_4h_0vnHtcCpUJluRKbwREtFCJB7WuGf1vEfUViMV7zvrC4cYixTSxiRaJLXznsT9PrcibGHVdVnpsDg0eJ0VOVZ">
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow container mx-auto max-w-container-max px-margin-mobile md:px-gutter py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Registration / Settings Section (2/3 width on desktop) -->
+<section class="lg:col-span-8 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-6 lg:p-8">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Welcome to MathQuest</h1>
+<p class="text-on-surface-variant mb-8">Set up your profile to start your journey. To ensure complete mastery of the fundamentals, all new users begin at Level 1, with difficulty scaling as you progress.</p>
+<form class="space-y-6">
+<!-- Profile Customization -->
+<div>
+<h2 class="text-lg font-bold text-on-surface mb-4">Avatar Customization</h2>
+<div class="flex items-center space-x-6">
+<div class="relative group cursor-pointer">
+<img alt="Current Avatar" class="w-24 h-24 rounded-full border-4 border-surface-container-high object-cover shadow-sm group-hover:border-primary transition-colors" data-alt="A brightly colored, stylized 3D rendered avatar of a young explorer character, smiling, set against a clean white background, typical of modern educational app profiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRgwOJlLWIN2vn8rtjuX0J5khpd052l7zRF6aoFkwFvfJDMcfdsri65VrsfYMhC1PLAwFjs5zjIHgUUAApJ26RP3AONeCeP8HCd3KJIQ3fCOEl97eKwygkz5hvzGe2qH2LhMGI-VJwjckyk5eR-1_GTVK8cdIhqNy7YiRG7cwwCP7-X9n6GF3s9GM1f3kdctSdYHWY7XqctVFrE7PplxRi_VhhAMqUqt9u65DwPh5lkbb8XNl98jLg">
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white" data-icon="edit">edit</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface" for="username">Hero Name</label>
+<input class="w-full md:w-64 border border-outline rounded-lg px-4 py-2 h-12 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow bg-surface-bright text-on-surface" id="username" type="text" value="MathWhiz42">
+</div>
+</div>
+</div>
+<!-- Tailored Setup -->
+<div class="pt-6 border-t border-outline-variant">
+<h2 class="text-lg font-bold text-on-surface mb-4">Your Math Journey</h2><p class="text-sm text-primary font-medium mb-4">Note: All journeys begin at Level 1 to build a strong foundation.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface" for="age-group">Age Group</label>
+<select class="w-full border border-outline rounded-lg px-4 py-2 h-12 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow bg-surface-bright text-on-surface appearance-none" id="age-group">
+<option value="toddler">Preschool (Ages 3-5)</option>
+<option value="early">Early Primary (Ages 6-8)</option>
+<option selected="" value="late">Late Primary (Ages 9-11)</option>
+<option value="middle">Middle School (Ages 12-14)</option>
+<option value="high">High School (Ages 15+)</option>
+<option value="advanced">Advanced / Adult</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface" for="goal">Primary Goal</label>
+<select class="w-full border border-outline rounded-lg px-4 py-2 h-12 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-shadow bg-surface-bright text-on-surface appearance-none" id="goal">
+<option value="fun">Just for Fun</option>
+<option selected="" value="practice">School Practice</option>
+<option value="competition">Competition Prep</option>
+<option value="brain">Brain Training</option>
+</select>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full md:w-auto px-8 py-3 bg-secondary text-on-secondary font-bold rounded-lg shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors active:scale-95 duration-200" type="button">Save Profile &amp; Start Level 1</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Stats Dashboard (1/3 width on desktop) -->
+<section class="lg:col-span-4 space-y-6">
+<!-- Bento Grid Style Stats -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Total Problems -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl shadow-md p-6 border-t-2 border-primary">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-sm font-medium text-on-surface-variant">Total Problems Solved</h3>
+<span class="material-symbols-outlined text-primary" data-icon="functions">functions</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">1,248</div>
+<div class="text-sm text-secondary font-medium mt-1">+42 this week</div>
+</div>
+<!-- Accuracy -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-5 border-t-2 border-secondary">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-sm font-medium text-on-surface-variant">Accuracy</h3>
+<span class="material-symbols-outlined text-secondary" data-icon="track_changes">track_changes</span>
+</div>
+<div class="text-2xl font-bold text-on-surface">94%</div>
+<!-- Mini progress bar -->
+<div class="w-full h-2 bg-secondary/10 rounded-full mt-3 overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<!-- Current Streak -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-5 border-t-2 border-tertiary">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-sm font-medium text-on-surface-variant">Streak</h3>
+<span class="material-symbols-outlined text-tertiary" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<div class="text-2xl font-bold text-on-surface">12 Days</div>
+<div class="text-xs text-on-surface-variant mt-2">Keep it up!</div>
+</div>
+<!-- Favorite Topic -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl shadow-md p-6 relative overflow-hidden group">
+<div class="absolute right-[-20px] top-[-20px] opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="category">category</span>
+</div>
+<h3 class="text-sm font-medium text-on-surface-variant mb-1 relative z-10">Favorite Topic</h3>
+<div class="text-xl font-bold text-on-surface relative z-10">Fractions &amp; Decimals</div>
+<p class="text-sm text-on-surface-variant mt-2 relative z-10">You excel here! Try the next advanced module.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<!-- Suppressed on this screen as it is a transitional/setup page -->
+
+
+</body></html>

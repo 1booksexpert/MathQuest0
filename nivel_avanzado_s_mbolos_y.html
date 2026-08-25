@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Advanced Identification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#121c2a",
+                    "on-primary-container": "#fefcff",
+                    "tertiary-container": "#8b4ef7",
+                    "on-tertiary-fixed": "#250059",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-tertiary-fixed-variant": "#5b00c5",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#27313f",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "tertiary-fixed-dim": "#d3bbff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d9e3f6",
+                    "secondary": "#006c49",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed": "#001a41",
+                    "on-tertiary-container": "#fffbff",
+                    "outline-variant": "#c1c6d7",
+                    "on-secondary-container": "#00714d",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "outline": "#717786",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#004493",
+                    "secondary-container": "#6cf8bb",
+                    "on-surface-variant": "#414754",
+                    "tertiary": "#712edd",
+                    "on-background": "#121c2a",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-container-high": "#dee9fc",
+                    "surface-tint": "#005bc0",
+                    "primary": "#0059bb",
+                    "tertiary-fixed": "#ebddff",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-dim": "#d0dbed",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#002113",
+                    "inverse-primary": "#adc7ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "primary-container": "#0070ea",
+                    "surface-container": "#e6eeff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base": "16px",
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "code-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "code-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(113, 46, 221, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col p-4 gap-2 h-screen w-64 fixed left-0 top-0 shadow-md bg-surface dark:bg-surface-dim z-50">
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-primary">MathQuest</h1>
+</div>
+<div class="flex items-center gap-4 mb-8 p-2">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="A stylized, glowing avatar badge depicting a geometric crystal in hues of deep purple and electric blue on a white background, signifying advanced mathematical rank in a modern, gamified learning application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfLv5eFAzrbHOZ8AHvaRvjBuResj0XmxGhZrkzEF7lk-KfF7SBJl8-pLgoH3G2gypvDNqSSbRsDp6G3XiRFmDb1Xmf8Ad9kRZLdpYCbKWlnww3Wv1eoMiZtGz78PsfDVuUkREEkq-epbPaD0WImYE9DA_LnD_asn_YMDqR72GpqDwL956ANWmj69AQXxmsa3bF2fH1zny3n4neIaHgcMVtm9iSdhV58yaF9ebH7xid91wyfInL6JaX"/>
+<div>
+<p class="font-bold text-on-surface">Level 24</p>
+<p class="text-sm text-on-surface-variant">Grand Arithmetician</p>
+</div>
+</div>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-xl" href="mathquest_dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Library</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container rounded-xl font-bold" href="#">
+<span class="material-symbols-outlined symbol-fill" data-icon="calculate">calculate</span>
+<span>Calculator</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-xl" href="global_rankings.html">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span>Rankings</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-highest transition-all rounded-xl" href="user_profile_sign_up.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+<div class="mt-auto">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-bold hover:bg-surface-tint transition-colors shadow-sm">Start Daily Quest</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col h-full bg-surface-bright relative">
+<!-- TopNavBar (Mobile) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile h-16 shadow-sm bg-surface-container-lowest z-40 relative">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">MathQuest</h1>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A stylized, glowing avatar badge depicting a geometric crystal in hues of deep purple and electric blue on a white background, signifying advanced mathematical rank in a modern, gamified learning application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAypc-4SpwmQ150hAz5mR3b9iauU7XbpbRjKC77kIn7Fiiy6UdubKmPOCiC0YEznhXPhEtoc-Ux2k1UU44t4r12c2NXndrlNg04GbONbLmV9WPouxz4wJqnOQP7pMEFgUzNKhFkmtQk3yydjgQ44dkd2pZE2G08ANjNDlhPkqTzNM-5m5I30OmaHglPdI4QaWUZjvgOYndh21X0yMsAbG57hfT0OxmSbRUkXOh7Zy01tDG--JQ_pKJk"/>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-gutter flex flex-col items-center">
+<!-- Progress / Level Indicator -->
+<div class="w-full max-w-container-max mb-8 flex items-center justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface hidden md:block">Eigenvalue Identification</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface md:hidden">Eigenvalue ID</h2>
+<p class="text-on-surface-variant mt-1">Module: Advanced Mathematical Physics</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="volume_up">volume_up</span>
+<span class="font-bold text-tertiary animate-pulse">Sound Clue Active</span>
+</div>
+</div>
+<!-- Workspace Layout -->
+<div class="w-full max-w-container-max flex flex-col lg:flex-row gap-gutter">
+<!-- Problem Canvas (2/3 width on desktop) -->
+<div class="w-full lg:w-2/3 flex flex-col gap-base">
+<!-- Complex Problem Display -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_16px_rgba(0,0,0,0.05)] border-t-2 border-tertiary relative overflow-hidden">
+<div class="absolute top-4 right-4 flex items-center gap-1 bg-surface-container-low px-3 py-1 rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-bold text-secondary">Awaiting Input</span>
+</div>
+<h3 class="font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+                            Solve the following characteristic equation:
+                        </h3>
+<div class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container p-6 rounded-lg mb-8 text-center text-xl overflow-x-auto whitespace-nowrap border border-outline-variant/30">
+                            det(A - <span class="inline-block w-8 border-b-2 border-tertiary mx-2 animate-pulse text-tertiary">_</span>I) = 0
+                        </div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-sm shrink-0">1</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">Identify the matrix A representing the physical system.</div>
+</div>
+<div class="ml-3 border-l-2 border-outline-variant/30 h-4"></div>
+<div class="flex items-start gap-4">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-sm shrink-0">2</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">Listen to the auditory clue to identify the missing characteristic variable.</div>
+</div>
+<div class="ml-3 border-l-2 border-outline-variant/30 h-4"></div>
+<div class="flex items-start gap-4">
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-sm shrink-0 glow-effect">3</div>
+<div class="font-code-sm text-code-sm text-on-surface font-bold">Input the correct symbol to proceed.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Advanced Calculator / Tools (1/3 width on desktop) -->
+<div class="w-full lg:w-1/3 flex flex-col gap-base">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.05)] p-4 flex flex-col h-full">
+<div class="flex items-center justify-between mb-4 pb-2 border-b border-outline-variant/30">
+<span class="font-bold text-on-surface">Symbolic Input</span>
+<span class="material-symbols-outlined text-outline">memory</span>
+</div>
+<!-- Input Display -->
+<div class="w-full h-16 border-2 border-outline-variant focus-within:border-primary rounded-lg mb-6 flex items-center px-4 bg-surface-bright transition-colors font-code-sm text-2xl text-on-surface justify-end">
+<span class="animate-pulse w-[2px] h-6 bg-primary ml-1"></span>
+</div>
+<!-- Advanced Keypad -->
+<div class="grid grid-cols-4 gap-2 mb-4">
+<!-- Row 1 -->
+<button class="h-12 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-code-sm transition-colors shadow-sm">sin</button>
+<button class="h-12 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-code-sm transition-colors shadow-sm">cos</button>
+<button class="h-12 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-code-sm transition-colors shadow-sm">tan</button>
+<button class="h-12 bg-surface-container-high hover:bg-outline-variant/50 rounded text-on-surface font-code-sm transition-colors shadow-sm material-symbols-outlined">backspace</button>
+<!-- Row 2 -->
+<button class="h-12 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-code-sm transition-colors shadow-sm">e</button>
+<button class="h-12 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-code-sm transition-colors shadow-sm">ln</button>
+<button class="h-12 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-code-sm transition-colors shadow-sm">log</button>
+<button class="h-12 bg-surface-container-high hover:bg-outline-variant/50 rounded text-on-surface font-code-sm transition-colors shadow-sm">/</button>
+<!-- Row 3 - Highlighted Variables -->
+<button class="h-14 bg-surface hover:bg-surface-container rounded text-on-surface font-code-sm transition-colors shadow-sm text-xl border border-outline-variant/20">x</button>
+<button class="h-14 bg-surface hover:bg-surface-container rounded text-on-surface font-code-sm transition-colors shadow-sm text-xl border border-outline-variant/20">y</button>
+<button class="h-14 bg-tertiary-container text-on-primary-container rounded font-code-sm transition-transform active:scale-95 shadow-md glow-effect border-t border-white/20 text-2xl relative overflow-hidden group">
+<span class="relative z-10">π</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+</button>
+<button class="h-14 bg-tertiary-container text-on-primary-container rounded font-code-sm transition-transform active:scale-95 shadow-md glow-effect border-t border-white/20 text-2xl relative overflow-hidden group">
+<span class="relative z-10">λ</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+</button>
+<!-- Numeric Pad -->
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">7</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">8</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">9</button>
+<button class="h-12 bg-surface-container-high hover:bg-outline-variant/50 rounded text-on-surface font-code-sm transition-colors shadow-sm">*</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">4</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">5</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">6</button>
+<button class="h-12 bg-surface-container-high hover:bg-outline-variant/50 rounded text-on-surface font-code-sm transition-colors shadow-sm">-</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">1</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">2</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">3</button>
+<button class="h-12 bg-surface-container-high hover:bg-outline-variant/50 rounded text-on-surface font-code-sm transition-colors shadow-sm">+</button>
+<button class="h-12 col-span-2 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">0</button>
+<button class="h-12 bg-surface-container-lowest border border-outline-variant/30 hover:bg-surface-container-low rounded text-on-surface font-code-sm shadow-sm">.</button>
+<button class="h-12 bg-primary text-on-primary rounded font-bold shadow-md hover:bg-surface-tint active:scale-95 transition-all">=</button>
+</div>
+</div>
+</div>
+</div>
+<div class="h-24 md:h-8"></div> <!-- Spacing for bottom nav on mobile -->
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe shadow-[0_-4px_10px_rgba(0,0,0,0.05)] bg-surface-container-lowest rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-xs mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:bg-surface-container-high transition-transform duration-200 scale-110" href="mathquest_gameplay_calculator.html">
+<span class="material-symbols-outlined symbol-fill" data-icon="extension">extension</span>
+<span class="text-xs mt-1 font-bold">Solve</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="global_rankings.html">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+<span class="text-xs mt-1">Leaderboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="user_profile_sign_up.html">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-xs mt-1">Account</span>
+</a>
+</nav>
+</main>
+</body></html>

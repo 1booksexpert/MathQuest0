@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest Admin - Panel de Despliegue Técnico y Marketing</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#121c2a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary": "#006c49",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d9e3f6",
+                    "inverse-primary": "#adc7ff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c1c6d7",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface": "#f8f9ff",
+                    "primary-container": "#0070ea",
+                    "tertiary": "#712edd",
+                    "secondary-container": "#6cf8bb",
+                    "surface-tint": "#005bc0",
+                    "surface-dim": "#d0dbed",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#8b4ef7",
+                    "on-tertiary-container": "#fffbff",
+                    "error": "#ba1a1a",
+                    "primary": "#0059bb",
+                    "on-primary-container": "#fefcff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#00714d",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-fixed": "#250059",
+                    "tertiary-fixed-dim": "#d3bbff",
+                    "on-surface-variant": "#414754",
+                    "surface-container-highest": "#d9e3f6",
+                    "surface-container-high": "#dee9fc",
+                    "on-tertiary-fixed-variant": "#5b00c5",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-error": "#ffffff",
+                    "outline": "#717786",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-surface": "#27313f",
+                    "tertiary-fixed": "#ebddff",
+                    "background": "#f8f9ff",
+                    "on-surface": "#121c2a",
+                    "on-primary-fixed": "#001a41",
+                    "surface-container": "#e6eeff",
+                    "secondary-fixed": "#6ffbbe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "base": "16px",
+                    "container-max": "1280px",
+                    "unit": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "code-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "code-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle glow for interactive elements */
+        .glow-hover:hover {
+            box-shadow: 0 4px 20px rgba(0, 89, 187, 0.15);
+            transform: translateY(-2px);
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="h-full w-64 fixed left-0 top-0 hidden md:flex flex-col bg-surface-container-low shadow-md h-screen border-r border-outline-variant z-40">
+<div class="p-base border-b border-outline-variant flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined icon-fill">dns</span>
+</div>
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-tight">MathQuest Console</h1>
+<p class="font-code-sm text-code-sm text-on-surface-variant">V 2.4.0 • Stable</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1">
+<!-- Local Server (Active intent for Deployment section) -->
+<li>
+<a class="bg-primary-container text-on-primary-container rounded-xl font-bold flex items-center px-4 py-3 mx-2" href="#">
+<span class="material-symbols-outlined mr-3" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dns</span>
+<span>Local Server</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">cloud_queue</span>
+<span>Cloudflare</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">database</span>
+<span>Supabase</span>
+</a>
+</li>
+<!-- Marketing intent -->
+<li>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">movie_filter</span>
+<span>Video Assets</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">insights</span>
+<span>Analytics</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-4 border-t border-outline-variant">
+<button class="w-full bg-surface-variant text-on-surface-variant rounded-xl py-2 px-4 font-bold flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">health_and_safety</span>
+                System Status
+            </button>
+<div class="mt-4 flex justify-between px-2">
+<a class="text-on-surface-variant flex items-center hover:text-primary font-code-sm text-code-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] mr-1">description</span> Docs
+                </a>
+<a class="text-on-surface-variant flex items-center hover:text-primary font-code-sm text-code-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px] mr-1">help</span> Support
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full h-full">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface shadow-sm border-b border-outline-variant flex justify-between items-center px-base py-unit w-full max-w-container-max mx-auto h-[64px]">
+<div class="flex items-center gap-4">
+<!-- Mobile menu toggle -->
+<button class="md:hidden text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary hidden md:block">
+                    MathQuest Admin
+                </div>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<!-- Deployments maps to Deployments intent -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-150 ease-in-out" href="#">Deployments</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 active:scale-95 duration-150 ease-in-out" href="#">Marketing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors pb-1 active:scale-95 duration-150 ease-in-out" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">cloud_done</span>
+</button>
+<button class="ml-2 bg-primary text-on-primary font-bold px-4 py-2 rounded-full hover:bg-surface-tint transition-colors text-sm shadow-md flex items-center gap-2">
+                    Deploy Now
+                </button>
+<img alt="User Avatar" class="w-8 h-8 rounded-full ml-4 border border-outline-variant object-cover" data-alt="A small, stylized profile avatar featuring a minimal, 3D rendered character with glasses and a lab coat against a solid blue background. High quality, professional look for a tech dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2olTBaXCMZNUYWWBwmPSBf6HOxayf-jQ0-6ob4Vddtx_1951Ftth4RAYW-MTIJ9KygSIrLcVAyZL1vvoeAxieLwee1olJCA3X67fV93ns7Dil_lSYApvTzPbg-E9yUSNsALcaMX-fSN5WsiD6j4VPuG6IhahPz1pIzBcLtPWnRW-zmVcgyd0Mp-8Yg1orqwzYUT3VCZ4YAQQ6iuh3j2URZ9BcQ1VJ-eJJgmDpefuRi4l96S_rD5T9"/>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-gutter max-w-container-max mx-auto w-full">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Technical Dashboard</h2>
+<p class="text-on-surface-variant">Manage infrastructure and marketing assets for MathQuest.</p>
+</div>
+<!-- Dashboard Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Deployment Section (Technical Workspace - 2/3 width) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Stats Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,0,0,0.05)] border border-outline-variant p-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">group</span>
+                                User Analytics (Supabase)
+                            </h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-sm font-bold">Live</span>
+</div>
+<div class="flex items-end gap-4">
+<div class="text-[56px] leading-[1] font-display-lg text-on-background font-extrabold tracking-tighter">
+                                14,208
+                            </div>
+<div class="text-secondary font-bold flex items-center pb-2">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span>
+                                +12% this week
+                            </div>
+</div>
+<p class="text-on-surface-variant text-sm mt-2">Active student registrations</p>
+</div>
+<!-- Infrastructure Cards (Bento Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Supabase -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,0,0,0.05)] border border-outline-variant p-6 border-t-2 border-t-secondary relative overflow-hidden glow-hover">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+</div>
+<div class="w-12 h-12 bg-surface-variant rounded-lg flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">database</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Supabase</h4>
+<p class="text-on-surface-variant text-sm mb-4">Auth &amp; PostgreSQL Database</p>
+<div class="space-y-3 font-code-sm text-code-sm">
+<div class="flex justify-between items-center pb-2 border-b border-surface-variant">
+<span class="text-on-surface-variant">Status</span>
+<span class="text-secondary font-bold">Connected</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-surface-variant">
+<span class="text-on-surface-variant">Tier</span>
+<span class="text-on-background">Free ($0.00/mo)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Latency</span>
+<span class="text-on-background">42ms</span>
+</div>
+</div>
+</div>
+<!-- Cloudflare Pages -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,0,0,0.05)] border border-outline-variant p-6 border-t-2 border-t-primary relative overflow-hidden glow-hover">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-primary">cloud_sync</span>
+</div>
+<div class="w-12 h-12 bg-surface-variant rounded-lg flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">cloud_queue</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Cloudflare Pages</h4>
+<p class="text-on-surface-variant text-sm mb-4">Global Frontend Edge Network</p>
+<div class="space-y-3 font-code-sm text-code-sm">
+<div class="flex justify-between items-center pb-2 border-b border-surface-variant">
+<span class="text-on-surface-variant">Status</span>
+<span class="text-primary font-bold">Deployed (v2.4.0)</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-surface-variant">
+<span class="text-on-surface-variant">Tier</span>
+<span class="text-on-background">Free ($0.00/mo)</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Bandwidth</span>
+<span class="text-on-background">12.4 GB / 100 GB</span>
+</div>
+</div>
+</div>
+<!-- Local Server -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,0,0,0.05)] border border-outline-variant p-6 flex flex-col md:flex-row items-center gap-6">
+<div class="w-16 h-16 bg-surface-variant rounded-full flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-3xl">dns</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="font-bold text-lg mb-1">Local Server (Node.js)</h4>
+<p class="text-on-surface-variant text-sm">Development environment runtime</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-bold text-on-surface hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span> Logs
+                                </button>
+<button class="px-4 py-2 bg-tertiary text-on-tertiary rounded-lg font-bold hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors shadow-[0_4px_12px_rgba(113,46,221,0.2)] flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">restart_alt</span> Restart
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Marketing Section (Reference Sidebar - 1/3 width) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,0,0,0.05)] border border-outline-variant p-6 h-full border-t-2 border-t-tertiary">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">movie_filter</span>
+                                Social Assets
+                            </h3>
+<button class="text-primary hover:bg-surface-variant p-1 rounded">
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<p class="text-sm text-on-surface-variant mb-6">Preview latest TikTok &amp; Reels (4-5s loops) for current campaign.</p>
+<div class="space-y-6">
+<!-- Video Preview 1 -->
+<div class="relative rounded-lg overflow-hidden group cursor-pointer shadow-md bg-black border border-outline-variant">
+<!-- Using requested placeholder image for video poster/preview -->
+<div class="bg-cover bg-center w-full aspect-[0.56] opacity-90 group-hover:opacity-100 transition-opacity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjXNlYQxh7zi1HDP19Ml5gJjk14qVUeHsFdATX6MvZE8vHHwSVdm8-oaHukcjs95I573csir3b1HKlaNRcJU2KH0GP5py9ijie5Tx9JeQB-b2yaQJl_rIrLiBEuevwrzhWOPSgwWZItAjqcAFfBoqn7FDxSvdKUt-p8fvnIOVgDVozQ4ThtbPt3ifUJ4lPv1m0FkpW-463UeJxIi_RGmJDD1dPy1OIAZun6Njdh4W1w_pZWykz1HAa')"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<div class="w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined icon-fill">play_arrow</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<span class="bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-md">0:05</span>
+<span class="bg-tertiary text-on-tertiary text-xs px-2 py-1 rounded font-bold shadow-sm">Character Jump</span>
+</div>
+</div>
+</div>
+<!-- Video Preview 2 -->
+<div class="relative rounded-lg overflow-hidden group cursor-pointer shadow-md bg-black border border-outline-variant">
+<!-- Using requested placeholder image for video poster/preview -->
+<div class="bg-cover bg-center w-full aspect-[0.56] opacity-90 group-hover:opacity-100 transition-opacity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9DlAEuoaDHTHsMYmg0V8Xb1CYYorBbqFqnUOv7HDskNgKY8IoYqhmskKM-WIlnRXrF6FgCId2fWrN3uNlRL3f-roXL3wfMIEz1lcs1NR96rM1EGBE-uXmPitwwe0v96EOeAD8iWD7At8XhRuoLz2JeelJKeCJ8e7i181k6o9Jxnu7ac6GBHPnIUhug5RPzHTU8qF0V7WE-K33afFl2JH5s2f7vtJ1rawfaBuCtTZFrD9B5ZgY_De9')"></div>
+<!-- Play Button Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<div class="w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined icon-fill">play_arrow</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<span class="bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-md">0:04</span>
+<span class="bg-tertiary text-on-tertiary text-xs px-2 py-1 rounded font-bold shadow-sm">UI Tap Ad</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (from JSON) -->
+<footer class="w-full py-8 mt-12 border-t border-outline-variant bg-surface-container-lowest max-w-container-max mx-auto px-base flex flex-col md:flex-row justify-between items-center gap-base">
+<div class="font-code-sm text-code-sm text-secondary">
+                    © 2024 MathQuest Educational Ecosystem. All rights reserved.
+                </div>
+<div class="flex gap-6">
+<a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">API Status</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

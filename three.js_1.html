@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_48 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_48" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_48');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Three.js Scene: MathQuest 3D Character Animation
+// A cute blue character jumping over numbers 1, 2, 3 with celebratory particles.
+
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
+
+// Character Group
+const character = new THREE.Group();
+
+// Body (rounded blob)
+const bodyGeo = new THREE.SphereGeometry(1, 32, 32);
+const bodyMat = new THREE.MeshPhongMaterial({ color: 0x007bff, shininess: 100 });
+const body = new THREE.Mesh(bodyGeo, bodyMat);
+body.scale.set(1, 1.2, 0.8);
+character.add(body);
+
+// Eyes
+const eyeGeo = new THREE.SphereGeometry(0.15, 16, 16);
+const eyeMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+const leftEye = new THREE.Mesh(eyeGeo, eyeMat);
+leftEye.position.set(-0.3, 0.5, 0.7);
+character.add(leftEye);
+const rightEye = new THREE.Mesh(eyeGeo, eyeMat);
+rightEye.position.set(0.3, 0.5, 0.7);
+character.add(rightEye);
+
+// Mouth
+const mouthGeo = new THREE.TorusGeometry(0.1, 0.05, 16, 32, Math.PI);
+const mouthMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+const mouth = new THREE.Mesh(mouthGeo, mouthMat);
+mouth.position.set(0, 0.2, 0.75);
+mouth.rotation.x = Math.PI;
+character.add(mouth);
+
+character.position.y = 1;
+scene.add(character);
+
+// Numbers (1, 2, 3) as floating text-like boxes for simplicity in this script
+const createNum = (color, x) => {
+    const geo = new THREE.BoxGeometry(0.6, 1, 0.4);
+    const mat = new THREE.MeshPhongMaterial({ color: color });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(x, -1, 0);
+    scene.add(mesh);
+    return mesh;
+};
+
+const num1 = createNum(0xff4d4d, -2);
+const num2 = createNum(0x4dff4d, 0);
+const num3 = createNum(0x4d4dff, 2);
+
+// Particles
+const particleCount = 50;
+const particlesGeo = new THREE.BufferGeometry();
+const posArray = new Float32Array(particleCount * 3);
+for(let i=0; i<particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+}
+particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+const particlesMat = new THREE.PointsMaterial({ size: 0.1, color: 0xffff00 });
+const particleMesh = new THREE.Points(particlesGeo, particlesMat);
+scene.add(particleMesh);
+
+camera.position.z = 5;
+
+// Animation Loop
+let clock = new THREE.Clock();
+function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Jumping animation
+    character.position.y = Math.abs(Math.sin(t * 3)) * 2;
+    character.rotation.y = Math.sin(t) * 0.2;
+    
+    // Floating numbers
+    num1.position.y = Math.sin(t * 2) * 0.2 - 1;
+    num2.position.y = Math.sin(t * 2 + 1) * 0.2 - 1;
+    num3.position.y = Math.sin(t * 2 + 2) * 0.2 - 1;
+
+    // Particles fall
+    particleMesh.rotation.y += 0.01;
+    particleMesh.position.y -= 0.02;
+    if(particleMesh.position.y < -5) particleMesh.position.y = 5;
+
+    renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_48 -->
+</body>
+</html>

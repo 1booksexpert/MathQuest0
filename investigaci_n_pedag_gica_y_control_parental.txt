@@ -1,0 +1,31 @@
+# Resultados de Investigación: Pedagogía de Matemáticas Tempranas y Control Parental
+
+## Modelos de Formación para el Aumento de Complejidad
+
+La investigación destaca que el aprendizaje matemático en la primera infancia no debe ser una progresión lineal de números, sino una superposición de trayectorias cognitivas. Los modelos clave identificados son:
+
+1.  **CPA (Concrete-Pictorial-Abstract):** El niño debe pasar de objetos físicos (manzanas reales) a representaciones pictóricas (dibujos de manzanas) y finalmente al símbolo abstracto (el número "2").
+2.  **Trayectorias de Aprendizaje (Clements & Sarama):** El aumento de complejidad debe seguir hitos como:
+    *   **Subitización:** Reconocer cantidades pequeñas al instante sin contar.
+    *   **Correspondencia Uno a Uno:** Tocar un objeto mientras se dice el número.
+    *   **Cardinalidad:** Entender que el último número dicho es el total del grupo.
+    *   **Inclusión Jerárquica:** Comprender que el 3 contiene al 2 y al 1.
+3.  **Andamiaje Desvanecido (Faded Scaffolding):** Reducir las ayudas visuales y sonoras a medida que el sistema detecta maestría, moviendo al usuario del "Entrenamiento" a la "Resolución Independiente".
+
+## Acceso para Adultos y Tutores (Parental Gates)
+
+Para separar la experiencia del niño de la del tutor sin usar contraseñas complejas que el niño podría ver, se recomiendan las siguientes estrategias:
+
+1.  **Botones de "Baja Afinidad Infantil":** Botones con iconos técnicos o texto pequeño y denso que no atraen la atención del niño (ej. un icono de engranaje pequeño o el texto "Justificación Pedagógica").
+2.  **Desafíos de "Puerta de Adulto":** Al presionar el botón, se solicita realizar una acción que un niño pequeño no puede hacer, como:
+    *   Resolver un problema de multiplicación simple (ej. 7 x 8).
+    *   Escribir el resultado de una suma de dos dígitos.
+    *   Realizar un gesto complejo (ej. mantener presionado con tres dedos por 3 segundos).
+3.  **Dashboards de "Semáforo":** Un panel para el tutor que usa colores para indicar rápidamente en qué etapa de la trayectoria de aprendizaje se encuentra el niño, ofreciendo actividades para hacer "fuera de la pantalla" (ej. "Hoy jugamos a contar ingredientes en la cocina").
+
+## Propuesta de Diseño para MathQuest
+
+Se sugiere implementar un **"Modo Tutor"** accesible mediante un botón discreto en las pantallas de entrenamiento. Este botón dará acceso a:
+*   La base pedagógica del ejercicio actual.
+*   El progreso del niño en la trayectoria de aprendizaje.
+*   Sugerencias de refuerzo offline.

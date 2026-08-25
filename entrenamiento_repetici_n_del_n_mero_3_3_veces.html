@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Learning Number 3</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts for Hanken Grotesk (Brand Typography) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#001a41",
+                      "surface-tint": "#005bc0",
+                      "tertiary-container": "#8b4ef7",
+                      "primary-container": "#0070ea",
+                      "surface-bright": "#f8f9ff",
+                      "secondary": "#006c49",
+                      "surface-dim": "#d0dbed",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#e6eeff",
+                      "primary-fixed-dim": "#adc7ff",
+                      "on-background": "#121c2a",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed": "#d8e2ff",
+                      "on-tertiary-container": "#fffbff",
+                      "on-secondary-fixed": "#002113",
+                      "surface-container-low": "#eff4ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-tertiary": "#ffffff",
+                      "surface-variant": "#d9e3f6",
+                      "on-primary-container": "#fefcff",
+                      "outline-variant": "#c1c6d7",
+                      "surface-container-high": "#dee9fc",
+                      "on-surface": "#121c2a",
+                      "on-surface-variant": "#414754",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#d9e3f6",
+                      "tertiary-fixed-dim": "#d3bbff",
+                      "primary": "#0059bb",
+                      "on-primary": "#ffffff",
+                      "outline": "#717786",
+                      "tertiary": "#712edd",
+                      "surface": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary-fixed-variant": "#004493",
+                      "tertiary-fixed": "#ebddff",
+                      "on-tertiary-fixed-variant": "#5b00c5",
+                      "secondary-fixed-dim": "#4edea3",
+                      "inverse-surface": "#27313f",
+                      "on-secondary-container": "#00714d",
+                      "inverse-primary": "#adc7ff",
+                      "background": "#f8f9ff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-tertiary-fixed": "#250059",
+                      "secondary-container": "#6cf8bb",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "unit": "4px",
+                      "base": "16px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "code-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        /* Custom animation for the speaker icon */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(0, 112, 234, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(0, 112, 234, 0); }
+            100% { transform: scale(0.8); box-shadow: 0 0 0 0 rgba(0, 112, 234, 0); }
+        }
+        .speaker-anim:active {
+            animation: pulse-ring 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        
+        /* Utility to scale up text beyond standard tokens while keeping font family */
+        .text-jumbo {
+            font-size: 120px;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low text-on-surface min-h-screen flex flex-col font-body-md overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Transactional Top Bar (No standard nav, just exit and progress) -->
+<header class="w-full px-6 py-8 flex items-center gap-6 max-w-container-max mx-auto z-10">
+<button aria-label="Exit lesson" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-lowest text-on-surface-variant shadow-sm border border-outline-variant/30 hover:bg-surface-variant transition-colors active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0; font-size: 28px;">close</span>
+</button>
+<!-- Progress Indicator -->
+<div class="flex-grow h-4 bg-surface-variant/50 rounded-full overflow-hidden shadow-inner flex relative">
+<div class="absolute inset-0 bg-secondary/10"></div>
+<div class="h-full bg-secondary rounded-full w-[15%] transition-all duration-1000 ease-out relative z-10 shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)]"></div>
+</div>
+</header>
+<!-- Main Content Canvas (Ultra-minimalist, focused on Number 3) -->
+<main class="flex-grow flex flex-col items-center justify-center w-full max-w-md mx-auto px-6 relative z-0"><div class="w-full flex flex-col items-center gap-4 mb-8">
+<div class="flex gap-4 sm:gap-8 justify-center w-full max-w-sm mx-auto">
+<span class="material-symbols-outlined text-outline-variant text-5xl sm:text-6xl transition-all duration-300" data-icon="star" data-weight="fill" id="star-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-5xl sm:text-6xl transition-all duration-300" data-icon="star" data-weight="fill" id="star-2" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-5xl sm:text-6xl transition-all duration-300" data-icon="star" data-weight="fill" id="star-3" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface-variant bg-surface-container py-2 px-6 rounded-full inline-flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="flag">flag</span>
+<span id="counter-text">0 de 3</span>
+</div>
+</div>
+<!-- Central Glass/Tactile Card -->
+<div class="w-full bg-surface-container-lowest rounded-[2rem] shadow-[0_8px_32px_rgba(0,26,65,0.08)] border border-surface-variant/50 p-8 flex flex-col items-center gap-8 relative overflow-hidden">
+<!-- Subtle background accent -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Audio Cue Button -->
+<button class="speaker-anim relative flex items-center gap-3 bg-primary-container text-on-primary-container px-6 py-4 rounded-full shadow-sm border border-primary/10 hover:bg-surface-tint hover:text-on-primary transition-colors active:scale-95 group z-10">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile">Presiona el 3 tres veces</span>
+<!-- Inner glow for tactility -->
+<div class="absolute inset-0 rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.3)] pointer-events-none"></div>
+</button>
+<!-- Number and Objects Visualization -->
+<div class="flex flex-col items-center gap-4 w-full z-10">
+<!-- Massive Numeral -->
+<div class="font-display-lg font-extrabold text-primary text-jumbo drop-shadow-md">
+                    3
+                </div>
+<!-- Objects Illustration (Generated via data-alt) -->
+<div class="w-full h-48 bg-center bg-no-repeat bg-contain rounded-xl relative" data-alt="A highly detailed, friendly 3D illustration of three brightly colored, smiling toy cars lined up in a row. The scene is brightly lit with soft, diffuse lighting characteristic of a modern, clean light-mode UI. The background is pure transparent or white. The style is playful, tactile, and highly polished, resembling a premium educational game for toddlers." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkdCSeFuOcZJ3VmClThpXNWhMxHDXMQ3Z4XhHpTDveCm7lFhymAmLGiCbQneFW-cUa5atRGFHuc8OTmc2GBoO3oY4EV-NhFqmBVFS59e9JC0rImFqCRgFcNb9-jwsjSctoBDV5LTSx4CZCEmMlwwRibmiXZcpZR4EjmqOMNc4ABAlxakT_oWOsI3iWVcYVK2-SGPG_AvchAhHM1YpnG3U__zP3jlGaKS6S5GylzgGSZ_NKcoL2-PU3')">
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Interaction Area (Tactile Buttons) -->
+<footer class="w-full pb-12 pt-8 px-6 flex justify-center gap-4 sm:gap-6 max-w-md mx-auto z-10">
+<!-- Button 1 (Incorrect) -->
+<button class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-surface-container-lowest text-on-surface-variant border-2 border-outline-variant/30 shadow-sm flex items-center justify-center font-display-lg text-display-lg font-bold hover:bg-surface-variant hover:text-on-surface transition-all active:scale-95 active:shadow-none active:translate-y-1 text-jumbo font-extrabold border-4">
+            1
+        </button>
+<!-- Button 2 (Incorrect) -->
+<button class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-surface-container-lowest text-on-surface-variant border-2 border-outline-variant/30 shadow-sm flex items-center justify-center font-display-lg text-display-lg font-bold hover:bg-surface-variant hover:text-on-surface transition-all active:scale-95 active:shadow-none active:translate-y-1 text-jumbo font-extrabold border-4">
+            2
+        </button>
+<!-- Button 3 (Correct - Highlighted and tactile) -->
+<button class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-primary text-on-primary shadow-[0_8px_0_#004493,0_12px_24px_rgba(0,89,187,0.4)] border border-primary-fixed flex items-center justify-center font-display-lg text-display-lg font-bold hover:brightness-110 transition-all active:shadow-[0_0px_0_#004493,0_0px_0px_rgba(0,89,187,0.4)] active:translate-y-2 overflow-hidden group text-jumbo font-extrabold border-4">
+<!-- Subtle animated gleam on the correct button -->
+<div class="absolute top-0 left-[-100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            3
+            <div class="absolute inset-0 rounded-2xl shadow-[inset_0_4px_6px_rgba(255,255,255,0.3)] pointer-events-none"></div>
+</button>
+</footer>
+<style>
+        @keyframes shimmer {
+            100% { left: 200%; }
+        }
+    </style>
+</body></html>

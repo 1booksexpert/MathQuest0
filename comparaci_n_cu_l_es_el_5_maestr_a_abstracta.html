@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Mastery Test</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#8b4ef7",
+                        "primary-fixed-dim": "#adc7ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-container": "#fefcff",
+                        "surface-dim": "#d0dbed",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface-container-highest": "#d9e3f6",
+                        "background": "#f8f9ff",
+                        "primary": "#0059bb",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#6ffbbe",
+                        "error": "#ba1a1a",
+                        "secondary": "#006c49",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#250059",
+                        "outline": "#717786",
+                        "tertiary-fixed-dim": "#d3bbff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c1c6d7",
+                        "on-background": "#121c2a",
+                        "surface-container-high": "#dee9fc",
+                        "inverse-surface": "#27313f",
+                        "on-surface-variant": "#414754",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#0070ea",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-tint": "#005bc0",
+                        "on-tertiary-fixed-variant": "#5b00c5",
+                        "tertiary-fixed": "#ebddff",
+                        "tertiary": "#712edd",
+                        "surface-variant": "#d9e3f6",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "inverse-primary": "#adc7ff",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface": "#121c2a",
+                        "on-primary-fixed": "#001a41",
+                        "surface-container": "#e6eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "base": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .star-glow {
+            filter: drop-shadow(0 0 8px rgba(108, 248, 187, 0.6));
+            animation: pulse-glow 2s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            from { filter: drop-shadow(0 0 8px rgba(108, 248, 187, 0.4)); }
+            to { filter: drop-shadow(0 0 16px rgba(108, 248, 187, 0.8)); }
+        }
+        .jumbo-btn {
+            box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
+            transition: all 0.1s ease-in-out;
+        }
+        .jumbo-btn:active {
+            transform: translateY(8px);
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen w-full overflow-hidden flex flex-col font-body-md text-body-md select-none">
+<!-- Header area, transactional flow, no global nav -->
+<header class="w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-6 flex justify-center items-center">
+<!-- Progress Bar -->
+<div class="flex flex-col items-center gap-2 w-full max-w-md">
+<div class="flex justify-between w-full text-secondary font-bold mb-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">¡Prueba Final!</span>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-secondary-container star-glow text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-container star-glow text-5xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-container star-glow text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="w-full bg-secondary-container/10 h-2 rounded-full overflow-hidden mt-2">
+<div class="bg-secondary-fixed h-full w-full rounded-full"></div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-gutter pb-safe">
+<div class="text-center mb-12 animate-fade-in-up">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-2">¿Cuál es el 5?</h1>
+<p class="text-on-surface-variant font-body-md text-body-md">Toca el número correcto.</p>
+</div>
+<div class="flex w-full max-w-2xl gap-8 md:gap-16 justify-center items-stretch h-64 md:h-80">
+<!-- Option 1 -->
+<button class="jumbo-btn flex-1 bg-surface-container-lowest rounded-3xl border-4 border-surface-container-highest flex items-center justify-center relative overflow-hidden group hover:border-primary-container focus:outline-none focus:ring-4 focus:ring-primary-container/50">
+<div class="absolute inset-0 bg-primary-fixed-dim/0 group-hover:bg-primary-fixed-dim/10 transition-colors"></div>
+<span class="font-display-lg text-[120px] md:text-[180px] font-extrabold text-on-surface leading-none">4</span>
+</button>
+<!-- Option 2 -->
+<button class="jumbo-btn flex-1 bg-surface-container-lowest rounded-3xl border-4 border-surface-container-highest flex items-center justify-center relative overflow-hidden group hover:border-primary-container focus:outline-none focus:ring-4 focus:ring-primary-container/50" onclick="handleCorrect()">
+<div class="absolute inset-0 bg-primary-fixed-dim/0 group-hover:bg-primary-fixed-dim/10 transition-colors"></div>
+<span class="font-display-lg text-[120px] md:text-[180px] font-extrabold text-on-surface leading-none">5</span>
+</button>
+</div>
+</main>
+<!-- Feedback Overlay (Hidden by default) -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300" id="feedback-overlay">
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-3xl shadow-[0_24px_60px_rgba(0,0,0,0.15)] flex flex-col items-center transform scale-90 transition-transform duration-300" id="feedback-card">
+<div class="w-24 h-24 rounded-full bg-secondary-container flex items-center justify-center mb-6 star-glow">
+<span class="material-symbols-outlined text-on-secondary-container text-6xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-2 text-center">¡Excelente!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mb-8">Has dominado el número 5.</p>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline-lg-mobile text-headline-lg-mobile shadow-lg shadow-primary/20 hover:bg-primary-container hover:text-on-primary-container transition-colors w-full active:scale-95" onclick="location.reload()">
+                Siguiente Nivel
+            </button>
+</div>
+</div>
+<script>
+        function handleCorrect() {
+            const overlay = document.getElementById('feedback-overlay');
+            const card = document.getElementById('feedback-card');
+            
+            overlay.classList.remove('hidden');
+            
+            // Trigger reflow
+            void overlay.offsetWidth;
+            
+            overlay.classList.remove('opacity-0');
+            card.classList.remove('scale-90');
+            card.classList.add('scale-100');
+        }
+    </script>
+</body></html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Entrenamiento del Número 5</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#27313f",
+                        "on-surface": "#121c2a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed-variant": "#5b00c5",
+                        "tertiary-fixed-dim": "#d3bbff",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#250059",
+                        "surface-tint": "#005bc0",
+                        "tertiary": "#712edd",
+                        "surface-dim": "#d0dbed",
+                        "surface-container": "#e6eeff",
+                        "secondary": "#006c49",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface-variant": "#414754",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ebddff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-container": "#0070ea",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c1c6d7",
+                        "error-container": "#ffdad6",
+                        "on-background": "#121c2a",
+                        "primary": "#0059bb",
+                        "on-secondary-container": "#00714d",
+                        "inverse-primary": "#adc7ff",
+                        "tertiary-container": "#8b4ef7",
+                        "outline": "#717786",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "surface-container-highest": "#d9e3f6",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#d9e3f6",
+                        "surface-container-high": "#dee9fc",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-container": "#fefcff",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "base": "16px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Ambient shadows for level 1 & 2 elements */
+        .shadow-ambient-lvl1 {
+            box-shadow: 0px 4px 8px rgba(0, 89, 187, 0.1);
+        }
+        .shadow-ambient-lvl2 {
+            box-shadow: 0px 6px 12px rgba(0, 89, 187, 0.15);
+        }
+        
+        /* Interactive button subtle top edge glow */
+        .btn-glow-edge {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0px 6px 12px rgba(0, 89, 187, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-full flex flex-col items-center justify-center p-4">
+<!-- Pedagogical Justification Button (Discreet) -->
+<button aria-label="Justificación Pedagógica" class="absolute top-4 right-4 flex items-center gap-2 p-2 rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="info">info</span>
+</button>
+<!-- Main Container -->
+<main class="w-full max-w-container-max flex flex-col items-center justify-center space-y-8 pb-20">
+<!-- Progress Indicator: 3 Empty Stars -->
+<div class="flex items-center justify-center gap-4 mb-4">
+<span class="material-symbols-outlined text-[48px] text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-[48px] text-outline-variant" data-icon="star">star</span>
+<span class="material-symbols-outlined text-[48px] text-outline-variant" data-icon="star">star</span>
+</div>
+<!-- Central Instruction -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary text-center">
+            Presiona el 5 tres veces
+        </h1>
+<!-- Visual Representation Area (Glassmorphism Card) -->
+<div class="bg-surface-container-lowest shadow-ambient-lvl1 rounded-xl p-8 flex flex-col items-center justify-center space-y-6 w-full max-w-md border-t-2 border-primary-container mx-auto">
+<!-- Large Number 5 -->
+<div class="font-display-lg text-[120px] leading-none font-black text-primary drop-shadow-sm select-none">
+                5
+            </div>
+<!-- 5 Objects Representation -->
+<div class="flex gap-3 justify-center text-primary-container">
+<span class="material-symbols-outlined filled-icon text-[40px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon text-[40px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon text-[40px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon text-[40px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled-icon text-[40px]" data-icon="star">star</span>
+</div>
+</div>
+<!-- Jumbo Keypad -->
+<div class="grid grid-cols-5 gap-3 w-full max-w-lg mx-auto mt-8">
+<button class="bg-surface-container-high text-on-surface-variant rounded-xl h-20 md:h-24 font-headline-lg text-headline-lg font-bold shadow-sm hover:bg-surface-variant transition-colors active:scale-95 flex items-center justify-center select-none">1</button>
+<button class="bg-surface-container-high text-on-surface-variant rounded-xl h-20 md:h-24 font-headline-lg text-headline-lg font-bold shadow-sm hover:bg-surface-variant transition-colors active:scale-95 flex items-center justify-center select-none">2</button>
+<button class="bg-surface-container-high text-on-surface-variant rounded-xl h-20 md:h-24 font-headline-lg text-headline-lg font-bold shadow-sm hover:bg-surface-variant transition-colors active:scale-95 flex items-center justify-center select-none">3</button>
+<button class="bg-surface-container-high text-on-surface-variant rounded-xl h-20 md:h-24 font-headline-lg text-headline-lg font-bold shadow-sm hover:bg-surface-variant transition-colors active:scale-95 flex items-center justify-center select-none">4</button>
+<!-- Highlighted Number 5 -->
+<button class="bg-primary text-on-primary rounded-xl h-24 md:h-32 font-display-lg text-display-lg font-black btn-glow-edge hover:bg-primary-container transition-all active:scale-90 flex items-center justify-center select-none col-span-1 transform -translate-y-2">
+                5
+            </button>
+</div>
+</main>
+<script>
+        // Simple interaction script to animate stars when 5 is pressed
+        const btn5 = document.querySelector('.bg-primary.text-on-primary');
+        const stars = document.querySelectorAll('.flex.items-center.justify-center.gap-4 .material-symbols-outlined');
+        let pressCount = 0;
+
+        btn5.addEventListener('click', () => {
+            if (pressCount < 3) {
+                // Change star to filled and primary color
+                stars[pressCount].classList.add('filled-icon', 'text-secondary');
+                stars[pressCount].classList.remove('text-outline-variant');
+                stars[pressCount].style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    stars[pressCount-1].style.transform = 'scale(1)';
+                }, 200);
+                
+                pressCount++;
+
+                // Trigger success feedback on 3rd press
+                if (pressCount === 3) {
+                    setTimeout(() => {
+                        btn5.classList.replace('bg-primary', 'bg-secondary');
+                        btn5.classList.replace('hover:bg-primary-container', 'hover:bg-secondary-container');
+                        btn5.innerHTML = '<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: \'FILL\' 1">check</span>';
+                    }, 300);
+                }
+            }
+        });
+    </script>
+</body></html>

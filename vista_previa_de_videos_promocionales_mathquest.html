@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest Marketing Videos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#27313f",
+                      "on-surface": "#121c2a",
+                      "tertiary-container": "#8b4ef7",
+                      "inverse-primary": "#adc7ff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#d3bbff",
+                      "secondary": "#006c49",
+                      "outline-variant": "#c1c6d7",
+                      "background": "#f8f9ff",
+                      "outline": "#717786",
+                      "on-tertiary-fixed": "#250059",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-secondary-container": "#00714d",
+                      "on-tertiary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-background": "#121c2a",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#6cf8bb",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-surface-variant": "#414754",
+                      "surface-tint": "#005bc0",
+                      "primary-container": "#0070ea",
+                      "tertiary-fixed": "#ebddff",
+                      "surface": "#f8f9ff",
+                      "surface-variant": "#d9e3f6",
+                      "on-primary-fixed": "#001a41",
+                      "surface-container-highest": "#d9e3f6",
+                      "surface-bright": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-container": "#fefcff",
+                      "on-tertiary-fixed-variant": "#5b00c5",
+                      "primary-fixed": "#d8e2ff",
+                      "on-error": "#ffffff",
+                      "surface-container-high": "#dee9fc",
+                      "primary": "#0059bb",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#712edd",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-dim": "#d0dbed",
+                      "on-secondary-fixed": "#002113",
+                      "surface-container": "#e6eeff",
+                      "primary-fixed-dim": "#adc7ff",
+                      "on-secondary-fixed-variant": "#005236"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "base": "16px",
+                      "unit": "4px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "code-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopAppBar from JSON -->
+<header class="w-full sticky top-0 z-50 bg-surface shadow-sm border-b border-outline-variant flex justify-between items-center px-base py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-display-lg tracking-tight text-primary">MathQuest Admin</span>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low px-3 py-2 rounded-lg active:scale-95 duration-150 ease-in-out" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low px-3 py-2 rounded-lg active:scale-95 duration-150 ease-in-out" href="#">Deployments</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 duration-150 ease-in-out" href="#">Marketing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-low px-3 py-2 rounded-lg active:scale-95 duration-150 ease-in-out" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-bold hover:bg-surface-tint transition-colors shadow-sm active:scale-95 duration-150 ease-in-out">Deploy Now</button>
+<div class="hidden md:flex gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors" data-icon="cloud_done">cloud_done</span>
+</div>
+<img alt="User Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small, circular avatar image of a user with a friendly expression, set against a bright, solid color background. The lighting is soft and flattering, suitable for a professional yet approachable UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB2s3zVIIrEFdaBfZrOu4LA3q0wuHzJZvS1I8Y6SO2IGo9WaYXtvvE1aa68hDAf9ZstrigJNpUc0teSW-yrhWfucRYaPeV2RrRQXNNSSf2EaJXGPdiB1ym4q9VIf-8R0HRHq4kGU6JYAg_SPf1VH6USYEOS6bQLhPTuyQ2Uzvr9EgAja-D6JheoR2pGMRzofc7EEug9HFwjoNN_FL0mFUsD_XV6cUAULR1DpDqMWM1VldmuvrQ1KfM"/>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar from JSON (Marketing is active) -->
+<aside class="h-screen w-64 fixed left-0 top-0 hidden md:flex flex-col bg-surface-container-low shadow-md border-r border-outline-variant pt-20 z-40">
+<div class="p-4 border-b border-outline-variant">
+<div class="flex items-center gap-3 mb-2">
+<img alt="System Status" class="w-8 h-8 rounded-full object-cover" data-alt="A small, stylized icon representing system status, perhaps a green checkmark or a subtle glowing pulse, set against a dark grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAex2T194Os9HWHpZ1En_bnNw1XnYdewjCCHNKCNhG9ISFTkc0voR2yOdvJKMomtymH_g8U3GawqPRELp_uJ7ScJkP-p_h3K9lz0PTlzEMOno9YMSBB3RV0-REUotFkWIa8M1Lb0Kz_Bd-sDCecWsKZ-kfZAVAU3tTuHacsxqu3FWSuq8k8scOnrkaT2goTgmiZBd6FMbIGjjmqKv9I2uLJBjaX1nK3acwP-tmm11R7uamkKP4nFKpf"/>
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">MathQuest Console</h2>
+<p class="text-sm text-on-surface-variant">V 2.4.0 • Stable</p>
+</div>
+</div>
+<button class="w-full bg-surface-variant text-primary font-bold py-2 rounded-lg hover:bg-surface-container-highest transition-colors mt-2">System Status</button>
+</div>
+<nav class="flex-1 py-4 flex flex-col gap-1 overflow-y-auto">
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dns">dns</span>
+                    Local Server
+                </a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="cloud_queue">cloud_queue</span>
+                    Cloudflare
+                </a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="database">database</span>
+                    Supabase
+                </a>
+<a class="bg-primary-container text-on-primary-container rounded-xl font-bold flex items-center px-4 py-3 mx-2 cursor-pointer transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="movie_filter">movie_filter</span>
+                    Video Assets
+                </a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="insights">insights</span>
+                    Analytics
+                </a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant">
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="description">description</span>
+                    Docs
+                </a>
+<a class="text-on-surface-variant flex items-center px-4 py-3 mx-2 hover:bg-surface-variant rounded-xl transition-all cursor-pointer active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+                    Support
+                </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-0 md:ml-64 p-base md:p-gutter max-w-container-max mx-auto w-full flex flex-col gap-8">
+<header class="mb-8">
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Marketing Assets</h1>
+<p class="text-on-surface-variant max-w-2xl">Promotional video assets for Reels, TikTok, and YouTube Shorts. These high-engagement clips use our dynamic gamification aesthetic to attract new learners to the MathQuest platform.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Section 1: 3D Character Animation -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,112,234,0.1)] overflow-hidden flex flex-col border border-outline-variant">
+<div class="p-6 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">3D Character Animation</h2>
+<p class="text-sm text-on-surface-variant mt-1">Ideal for platform introductions and tutorial hooks.</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Ready to Export</span>
+</div>
+<div class="relative w-full h-80 bg-surface-container flex items-center justify-center p-4">
+<!-- Embedded Animation placeholder -->
+<div class="w-full h-full relative rounded-lg overflow-hidden shadow-inner bg-inverse-surface">
+<!-- STITCH_THREEJS_START:ANIMATION_48 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_48" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_48');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Three.js Scene: MathQuest 3D Character Animation
+// A cute blue character jumping over numbers 1, 2, 3 with celebratory particles.
+
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+scene.add(ambientLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
+
+// Character Group
+const character = new THREE.Group();
+
+// Body (rounded blob)
+const bodyGeo = new THREE.SphereGeometry(1, 32, 32);
+const bodyMat = new THREE.MeshPhongMaterial({ color: 0x007bff, shininess: 100 });
+const body = new THREE.Mesh(bodyGeo, bodyMat);
+body.scale.set(1, 1.2, 0.8);
+character.add(body);
+
+// Eyes
+const eyeGeo = new THREE.SphereGeometry(0.15, 16, 16);
+const eyeMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+const leftEye = new THREE.Mesh(eyeGeo, eyeMat);
+leftEye.position.set(-0.3, 0.5, 0.7);
+character.add(leftEye);
+const rightEye = new THREE.Mesh(eyeGeo, eyeMat);
+rightEye.position.set(0.3, 0.5, 0.7);
+character.add(rightEye);
+
+// Mouth
+const mouthGeo = new THREE.TorusGeometry(0.1, 0.05, 16, 32, Math.PI);
+const mouthMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+const mouth = new THREE.Mesh(mouthGeo, mouthMat);
+mouth.position.set(0, 0.2, 0.75);
+mouth.rotation.x = Math.PI;
+character.add(mouth);
+
+character.position.y = 1;
+scene.add(character);
+
+// Numbers (1, 2, 3) as floating text-like boxes for simplicity in this script
+const createNum = (color, x) => {
+    const geo = new THREE.BoxGeometry(0.6, 1, 0.4);
+    const mat = new THREE.MeshPhongMaterial({ color: color });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(x, -1, 0);
+    scene.add(mesh);
+    return mesh;
+};
+
+const num1 = createNum(0xff4d4d, -2);
+const num2 = createNum(0x4dff4d, 0);
+const num3 = createNum(0x4d4dff, 2);
+
+// Particles
+const particleCount = 50;
+const particlesGeo = new THREE.BufferGeometry();
+const posArray = new Float32Array(particleCount * 3);
+for(let i=0; i<particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+}
+particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+const particlesMat = new THREE.PointsMaterial({ size: 0.1, color: 0xffff00 });
+const particleMesh = new THREE.Points(particlesGeo, particlesMat);
+scene.add(particleMesh);
+
+camera.position.z = 5;
+
+// Animation Loop
+let clock = new THREE.Clock();
+function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Jumping animation
+    character.position.y = Math.abs(Math.sin(t * 3)) * 2;
+    character.rotation.y = Math.sin(t) * 0.2;
+    
+    // Floating numbers
+    num1.position.y = Math.sin(t * 2) * 0.2 - 1;
+    num2.position.y = Math.sin(t * 2 + 1) * 0.2 - 1;
+    num3.position.y = Math.sin(t * 2 + 2) * 0.2 - 1;
+
+    // Particles fall
+    particleMesh.rotation.y += 0.01;
+    particleMesh.position.y -= 0.02;
+    if(particleMesh.position.y < -5) particleMesh.position.y = 5;
+
+    renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_48 -->
+<!-- Overlay controls for demo purposes -->
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center text-on-primary">
+<div class="bg-black/50 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors" data-icon="play_arrow">play_arrow</span>
+<div class="w-32 h-1 bg-white/30 rounded-full relative">
+<div class="absolute top-0 left-0 h-full w-1/3 bg-secondary-fixed rounded-full"></div>
+</div>
+<span class="text-xs font-code-sm">0:15 / 0:45</span>
+</div>
+<div class="bg-black/50 backdrop-blur-md rounded-full p-2 flex items-center justify-center">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-bold text-lg mb-2">Usage Context</h3>
+<p class="text-on-surface-variant mb-4">This vibrant, tactile 3D animation introduces the core "quest" mechanics of the app. It's highly effective for TikTok where visually distinct, high-quality 3D content stands out against standard user-generated video. The electric blue accents reinforce brand identity.</p>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-lg font-bold shadow-[0_4px_12px_rgba(0,112,234,0.3)] hover:bg-surface-tint hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="download">download</span> Download MP4
+                            </button>
+<button class="px-4 py-3 rounded-lg border border-outline text-on-surface font-bold hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Jumbo Interaction -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_8px_rgba(0,112,234,0.1)] overflow-hidden flex flex-col border border-outline-variant">
+<div class="p-6 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Jumbo Interaction Demo</h2>
+<p class="text-sm text-on-surface-variant mt-1">Focuses on UI satisfaction and 'aha!' moments.</p>
+</div>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">High Engagement</span>
+</div>
+<div class="relative w-full h-80 bg-surface-container flex items-center justify-center p-4">
+<!-- Embedded Animation placeholder -->
+<div class="w-full h-full relative rounded-lg overflow-hidden shadow-inner bg-inverse-surface">
+<!-- STITCH_THREEJS_START:ANIMATION_50 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_50" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_50');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Three.js Scene: Jumbo Interaction
+// Interactive giant hand/finger tapping a large "2" button.
+
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+scene.add(ambientLight);
+
+// Jumbo Button "2"
+const buttonGroup = new THREE.Group();
+const baseGeo = new THREE.BoxGeometry(2, 2, 0.5);
+const baseMat = new THREE.MeshPhongMaterial({ color: 0xff4d4d });
+const base = new THREE.Mesh(baseGeo, baseMat);
+buttonGroup.add(base);
+
+const numGeo = new THREE.TorusGeometry(0.5, 0.2, 16, 32);
+const numMat = new THREE.MeshPhongMaterial({ color: 0x4da6ff });
+const num = new THREE.Mesh(numGeo, numMat);
+num.position.z = 0.4;
+buttonGroup.add(num);
+
+scene.add(buttonGroup);
+
+// Hand/Finger
+const fingerGroup = new THREE.Group();
+const fingerGeo = new THREE.CylinderGeometry(0.3, 0.4, 3, 32);
+const fingerMat = new THREE.MeshPhongMaterial({ color: 0xffdbac });
+const finger = new THREE.Mesh(fingerGeo, fingerMat);
+finger.rotation.z = Math.PI / 4;
+fingerGroup.add(finger);
+fingerGroup.position.set(2, 2, 2);
+scene.add(fingerGroup);
+
+camera.position.z = 5;
+
+let clock = new THREE.Clock();
+function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Finger tap motion
+    const tap = Math.abs(Math.sin(t * 4));
+    fingerGroup.position.set(2 - tap * 1.5, 2 - tap * 1.5, 2 - tap);
+    
+    // Button squash effect
+    if (tap > 0.8) {
+        buttonGroup.scale.z = 0.7;
+    } else {
+        buttonGroup.scale.z = 1.0;
+    }
+
+    renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_50 -->
+<!-- Overlay controls for demo purposes -->
+<div class="absolute top-4 right-4 bg-error/90 text-on-error px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="fiber_manual_record">fiber_manual_record</span> Live Render
+                            </div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-bold text-lg mb-2">Usage Context</h3>
+<p class="text-on-surface-variant mb-4">By scaling up the UI interactions (like snapping a complex algebraic equation into place), this asset creates an ASMR-like visual satisfaction. It's perfect for Instagram Reels to demonstrate the 'Clean Gamification' approach and the fluid-fixed hybrid grid in action.</p>
+<div class="flex gap-3">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-lg font-bold shadow-[0_4px_12px_rgba(0,112,234,0.3)] hover:bg-surface-tint hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="download">download</span> Download MP4
+                            </button>
+<button class="px-4 py-3 rounded-lg border border-outline text-on-surface font-bold hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Quick Stats Bento Grid beneath -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-center">
+<span class="text-on-surface-variant text-sm mb-1 font-code-sm">Total Assets</span>
+<span class="font-display-lg text-display-lg text-primary">142</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-center">
+<span class="text-on-surface-variant text-sm mb-1 font-code-sm">Avg. Engagement</span>
+<span class="font-display-lg text-display-lg text-secondary">8.4%</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-center">
+<span class="text-on-surface-variant text-sm mb-1 font-code-sm">TikTok Shares</span>
+<span class="font-display-lg text-display-lg text-tertiary">12K</span>
+</div>
+<div class="bg-primary p-4 rounded-xl shadow-[0_4px_12px_rgba(0,112,234,0.3)] flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[80px]" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<span class="text-on-primary text-sm mb-1 font-code-sm relative z-10">Campaign Status</span>
+<span class="font-headline-lg text-headline-lg text-on-primary relative z-10">Active</span>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer from JSON -->
+<footer class="w-full py-8 mt-auto border-t border-outline-variant bg-surface-container-lowest max-w-container-max mx-auto px-base flex flex-col md:flex-row justify-between items-center gap-base font-code-sm text-code-sm">
+<div class="font-bold text-on-surface">© 2024 MathQuest Educational Ecosystem. All rights reserved.</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">API Status</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Comparison Level</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Hanken Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#001a41",
+                    "surface-tint": "#005bc0",
+                    "tertiary-container": "#8b4ef7",
+                    "primary-container": "#0070ea",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#006c49",
+                    "surface-dim": "#d0dbed",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-background": "#121c2a",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary-container": "#fffbff",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#d9e3f6",
+                    "on-primary-container": "#fefcff",
+                    "outline-variant": "#c1c6d7",
+                    "surface-container-high": "#dee9fc",
+                    "on-surface": "#121c2a",
+                    "on-surface-variant": "#414754",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#d9e3f6",
+                    "tertiary-fixed-dim": "#d3bbff",
+                    "primary": "#0059bb",
+                    "on-primary": "#ffffff",
+                    "outline": "#717786",
+                    "tertiary": "#712edd",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary-fixed-variant": "#004493",
+                    "tertiary-fixed": "#ebddff",
+                    "on-tertiary-fixed-variant": "#5b00c5",
+                    "secondary-fixed-dim": "#4edea3",
+                    "inverse-surface": "#27313f",
+                    "on-secondary-container": "#00714d",
+                    "inverse-primary": "#adc7ff",
+                    "background": "#f8f9ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-tertiary-fixed": "#250059",
+                    "secondary-container": "#6cf8bb",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "unit": "4px",
+                    "base": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "code-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "code-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom animations for interaction feedback */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+        .animate-shake {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-pop {
+            animation: pop 0.3s ease-out forwards;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Hide scrollbar for immersive app feel */
+        body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface-variant text-on-surface h-screen w-screen overflow-hidden flex flex-col font-body-md select-none">
+<!-- 
+      Note: Global Navigation (TopAppBar & BottomNavBar) is intentionally SUPPRESSED here.
+      Rule: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional... Task-Focused"
+      This is a highly focused interactive game level, demanding maximum canvas space and zero distractions.
+    -->
+<!-- Main Game Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile flex flex-col justify-center items-center gap-8 md:gap-12 relative z-10">
+<!-- Instruction / Audio Prompt -->
+<header aria-label="Play instruction audio" class="flex flex-col items-center gap-4 text-center cursor-pointer group" id="audio-prompt" role="button">
+<div class="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md group-active:scale-95 transition-transform shadow-[0_8px_16px_rgba(0,89,187,0.2)] relative">
+<!-- Inner glow for tactile feel -->
+<div class="absolute inset-0 rounded-full border-t-2 border-white/30 mix-blend-overlay"></div>
+<span class="material-symbols-outlined text-[40px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">volume_up</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary-fixed-dim drop-shadow-sm">
+                Selecciona el dos
+            </h1>
+</header>
+<!-- Interaction Area: The Comparison Cards -->
+<div class="grid grid-cols-2 gap-gutter w-full max-w-2xl">
+<!-- Option 1 (Incorrect) -->
+<button aria-label="Uno" class="relative group bg-surface-container-lowest rounded-[32px] p-6 md:p-8 flex flex-col items-center justify-between gap-6 shadow-[0_8px_24px_rgba(0,0,0,0.06)] border-4 border-transparent hover:border-surface-dim active:scale-95 transition-all duration-200 aspect-[3/4] md:aspect-square overflow-hidden" id="card-uno">
+<!-- Ambient background blob for depth -->
+<div class="absolute -inset-4 bg-gradient-to-br from-surface-container-low to-transparent opacity-50 rounded-full blur-2xl z-0"></div>
+<!-- Visual Content -->
+<div class="flex-1 flex items-center justify-center z-10 w-full">
+<div class="w-32 h-32 md:w-48 md:h-48 animate-float" style="animation-delay: 0s;">
+<img alt="One blue balloon" class="w-full h-full object-contain drop-shadow-xl" data-alt="A single, perfectly round, highly glossy vibrant blue balloon floating. Rendered in a clean, modern, 3D tactile style with soft studio lighting reflecting off its surface. The background is pure white to isolate the object perfectly. The style is premium, intellectual, yet engaging for a high-end educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAToWg6DcxGTLpydr3UnEBL68V19l8cH9wJNUjLsLaWpKXh-bUiYtZ3HnlngnTTKlFakRVbnv7MM6Mq0i2dSZ2QqP8x3-vd6DYoWlAEu_nsiboZsLPJDya2TNMSVl-Z-eHm-HbuDFwGU3iU6IWTcceX09pWB_gi7IKFWVmqydmNqntlsxKt5qKZ6xySli6zWCT_e32pD92PsDH8cxmx-7QN_GG8CMqKtvhPcPom-CR7Cl1ptoXQmss2"/>
+</div>
+</div>
+<!-- Text Label -->
+<div class="z-10 w-full text-center pb-2">
+<span class="font-display-lg text-display-lg text-on-surface tracking-tight">Uno</span>
+</div>
+<!-- Feedback Overlay (Hidden by default) -->
+<div class="absolute inset-0 bg-error/10 border-4 border-error rounded-[32px] opacity-0 transition-opacity flex items-center justify-center z-20 pointer-events-none" id="feedback-uno">
+<span class="material-symbols-outlined text-error text-[80px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">close</span>
+</div>
+</button>
+<!-- Option 2 (Correct) -->
+<button aria-label="Dos" class="relative group bg-surface-container-lowest rounded-[32px] p-6 md:p-8 flex flex-col items-center justify-between gap-6 shadow-[0_8px_24px_rgba(0,0,0,0.06)] border-4 border-transparent hover:border-surface-dim active:scale-95 transition-all duration-200 aspect-[3/4] md:aspect-square overflow-hidden" id="card-dos">
+<!-- Ambient background blob for depth -->
+<div class="absolute -inset-4 bg-gradient-to-br from-surface-container-low to-transparent opacity-50 rounded-full blur-2xl z-0"></div>
+<!-- Visual Content -->
+<div class="flex-1 flex flex-row items-center justify-center gap-2 md:gap-4 z-10 w-full">
+<div class="w-24 h-24 md:w-36 md:h-36 animate-float" style="animation-delay: 0.2s;">
+<img alt="One yellow balloon" class="w-full h-full object-contain drop-shadow-xl" data-alt="A single, perfectly round, highly glossy vibrant yellow balloon floating. Rendered in a clean, modern, 3D tactile style with soft studio lighting reflecting off its surface. The background is pure white to isolate the object perfectly. The style is premium, intellectual, yet engaging for a high-end educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGNnBLuKg4iyroHCtqAIMG6S0kFrzQd8t1PsTe7pZgH1mGXdeIedRiTMbLFnyBG0sEg2fySD2dDucrdQ7NGmYgURlqmqOh7J63lrA0wveRwoiHn_teUsHoi21p4KxygNUUSFbS8XYAgcSOUJhobhRf6h9yb-zaCWkmcPTY2RRp_wKpjuKQU615-X95JaJ57jjKG-rPn0K1nGrSWwN3bjj_h_76E7GhKoc2hsXlq0WvWHHX8kb9WuyB"/>
+</div>
+<div class="w-24 h-24 md:w-36 md:h-36 animate-float" style="animation-delay: 0.5s;">
+<img alt="One magenta balloon" class="w-full h-full object-contain drop-shadow-xl" data-alt="A single, perfectly round, highly glossy vibrant magenta balloon floating. Rendered in a clean, modern, 3D tactile style with soft studio lighting reflecting off its surface. The background is pure white to isolate the object perfectly. The style is premium, intellectual, yet engaging for a high-end educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcZqCl4Ig0aa4UpYOjsklGmV54Jat9bPZT5PEmMDfSHF2OHW3JFxEdG0LUVqXsmJgbpSBr9eMMslvudNCsOAkKqJ4YDU_FkOTn_1i5mQ9Qwfkn2EdFxqkJDmFysvITqagH_cQZvT2580c9_JMEB8jYlAc4LjTL-si_YWVvG7DzUiZPbgmG5WzaCeWmdcU7hQSVuJcrjdMJWPxDIkbtrpOBXBRI6Wmy2p7z4w5UwZYRpPuZQc47N4tK"/>
+</div>
+</div>
+<!-- Text Label -->
+<div class="z-10 w-full text-center pb-2">
+<span class="font-display-lg text-display-lg text-primary tracking-tight">Dos</span>
+</div>
+<!-- Feedback Overlay (Hidden by default) -->
+<div class="absolute inset-0 bg-secondary-container/20 border-4 border-secondary rounded-[32px] opacity-0 transition-opacity flex flex-col items-center justify-center z-20 pointer-events-none gap-2" id="feedback-dos">
+<span class="material-symbols-outlined text-secondary text-[80px] animate-pop" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Success Particle Effect Container -->
+<div class="absolute inset-0 pointer-events-none z-30 opacity-0 transition-opacity duration-300" id="particles-dos">
+<!-- Particles would ideally be injected via JS or a shader, using a simple radial CSS background as a fallback glow -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(108,248,187,0.4)_0%,transparent_70%)] mix-blend-screen"></div>
+</div>
+</button>
+</div>
+<!-- Optional Progress Indicator (Subtle, at bottom) -->
+<div class="fixed bottom-8 w-32 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/3 rounded-full"></div>
+</div>
+</main>
+<!-- Interactive Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardUno = document.getElementById('card-uno');
+            const cardDos = document.getElementById('card-dos');
+            const audioBtn = document.getElementById('audio-prompt');
+            
+            const feedbackUno = document.getElementById('feedback-uno');
+            const feedbackDos = document.getElementById('feedback-dos');
+            const particlesDos = document.getElementById('particles-dos');
+
+            // Audio prompt simulation
+            audioBtn.addEventListener('click', () => {
+                audioBtn.firstElementChild.classList.add('animate-pop');
+                setTimeout(() => {
+                    audioBtn.firstElementChild.classList.remove('animate-pop');
+                }, 300);
+            });
+
+            // Incorrect choice logic
+            cardUno.addEventListener('click', () => {
+                // Visual shake
+                cardUno.classList.add('animate-shake');
+                // Show red feedback
+                feedbackUno.classList.remove('opacity-0');
+                feedbackUno.classList.add('opacity-100');
+                
+                setTimeout(() => {
+                    cardUno.classList.remove('animate-shake');
+                    feedbackUno.classList.remove('opacity-100');
+                    feedbackUno.classList.add('opacity-0');
+                }, 800);
+            });
+
+            // Correct choice logic
+            cardDos.addEventListener('click', () => {
+                // Pop animation
+                cardDos.classList.add('animate-pop');
+                
+                // Lock interactions to prevent double tapping
+                cardUno.style.pointerEvents = 'none';
+                cardDos.style.pointerEvents = 'none';
+
+                // Show green success feedback
+                feedbackDos.classList.remove('opacity-0');
+                feedbackDos.classList.add('opacity-100');
+                
+                // Show particles/glow
+                particlesDos.classList.remove('opacity-0');
+                particlesDos.classList.add('opacity-100');
+
+                // Simulate moving to next level after delay
+                setTimeout(() => {
+                    // Reset for demo purposes (normally this would navigate)
+                    cardDos.classList.remove('animate-pop');
+                    feedbackDos.classList.remove('opacity-100');
+                    feedbackDos.classList.add('opacity-0');
+                    particlesDos.classList.remove('opacity-100');
+                    particlesDos.classList.add('opacity-0');
+                    
+                    cardUno.style.pointerEvents = 'auto';
+                    cardDos.style.pointerEvents = 'auto';
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

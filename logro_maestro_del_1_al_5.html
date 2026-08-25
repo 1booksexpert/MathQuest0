@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Maestro del 1 al 5</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "surface-container-highest": "#d9e3f6",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#ebddff",
+                      "tertiary-fixed-dim": "#d3bbff",
+                      "surface-variant": "#d9e3f6",
+                      "on-secondary-container": "#00714d",
+                      "surface-container": "#e6eeff",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#27313f",
+                      "background": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-tertiary-fixed-variant": "#5b00c5",
+                      "on-primary-fixed-variant": "#004493",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary-container": "#fefcff",
+                      "secondary-container": "#6cf8bb",
+                      "on-background": "#121c2a",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-high": "#dee9fc",
+                      "surface-dim": "#d0dbed",
+                      "primary": "#0059bb",
+                      "on-secondary-fixed": "#002113",
+                      "on-surface": "#121c2a",
+                      "inverse-primary": "#adc7ff",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#005bc0",
+                      "on-primary-fixed": "#001a41",
+                      "outline": "#717786",
+                      "outline-variant": "#c1c6d7",
+                      "tertiary-container": "#8b4ef7",
+                      "primary-fixed-dim": "#adc7ff",
+                      "secondary": "#006c49",
+                      "on-tertiary-container": "#fffbff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-surface-variant": "#414754",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#250059",
+                      "tertiary": "#712edd",
+                      "primary-fixed": "#d8e2ff",
+                      "primary-container": "#0070ea"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "base": "16px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "code-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background-color: #0059bb; /* primary */
+            top: -20px;
+            opacity: 0;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { opacity: 1; top: -20px; transform: rotate(0deg); }
+            100% { opacity: 0; top: 100vh; transform: rotate(360deg); }
+        }
+        .bounce-in {
+            animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2s infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(108, 248, 187, 0.5); } /* secondary-container */
+            100% { box-shadow: 0 0 30px rgba(108, 248, 187, 0.8); }
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen overflow-hidden flex flex-col items-center justify-center relative font-body-md">
+<!-- Confetti Container -->
+<div class="absolute inset-0 pointer-events-none z-0" id="confetti-container"></div>
+<!-- Main Content Canvas -->
+<main class="z-10 flex flex-col items-center justify-center w-full px-gutter max-w-container-max mx-auto text-center">
+<!-- Celebration Graphic -->
+<div class="relative mb-8 bounce-in">
+<!-- Glow background -->
+<div class="absolute inset-0 bg-secondary-container rounded-full blur-2xl opacity-50 pulse-glow"></div>
+<div class="relative w-48 h-48 md:w-64 md:h-64 bg-surface-container-lowest rounded-full shadow-lg flex items-center justify-center border-4 border-secondary-container z-10">
+<!-- Using an image to represent the trophy/badge -->
+<div class="w-full h-full rounded-full overflow-hidden flex items-center justify-center p-4">
+<span class="material-symbols-outlined text-[80px] md:text-[120px] text-tertiary" style="font-variation-settings: 'FILL' 1;">
+                         emoji_events
+                     </span>
+</div>
+<!-- Number Badges Orbiting -->
+<div class="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-on-primary font-headline-lg shadow-md transform rotate-[-15deg]">1</div>
+<div class="absolute top-4 -right-6 w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-on-secondary font-headline-lg shadow-md transform rotate-[10deg]">2</div>
+<div class="absolute bottom-10 -left-8 w-16 h-16 bg-tertiary rounded-full flex items-center justify-center text-on-tertiary font-headline-lg shadow-md transform rotate-[-5deg]">3</div>
+<div class="absolute -bottom-6 right-4 w-12 h-12 bg-error rounded-full flex items-center justify-center text-on-error font-headline-lg shadow-md transform rotate-[20deg]">4</div>
+<div class="absolute top-1/2 -right-10 w-20 h-20 bg-primary-container rounded-full flex items-center justify-center text-on-primary-container font-display-lg shadow-md transform -translate-y-1/2 rotate-[-10deg]">5</div>
+</div>
+</div>
+<!-- Headline -->
+<h1 class="font-display-lg text-display-lg text-primary mb-4 bounce-in" style="animation-delay: 0.2s;">
+            ¡Maestro del 1 al 5!
+        </h1>
+<p class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface-variant mb-12 bounce-in" style="animation-delay: 0.3s;">
+            Has superado el nivel con éxito.
+        </p>
+<!-- Jumbo Action Button -->
+<button class="bg-secondary text-on-secondary font-headline-lg text-headline-lg py-4 px-12 rounded-xl shadow-[0_8px_0_0_#005236] active:shadow-[0_2px_0_0_#005236] active:translate-y-2 transition-all duration-100 ease-in-out bounce-in w-full md:w-auto" style="animation-delay: 0.5s;">
+            Continuar
+        </button>
+</main>
+<!-- Discreet Pedagogy Button -->
+<button class="absolute bottom-6 right-6 text-on-surface-variant hover:text-primary transition-colors z-20 flex flex-col items-center opacity-70 hover:opacity-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">
+            school
+        </span>
+<span class="font-code-sm text-code-sm mt-1 text-[10px]">Pedagogía</span>
+</button>
+<script>
+        // Simple confetti script
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#0059bb', '#6cf8bb', '#712edd', '#ba1a1a', '#ffdad6'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti-piece');
+                
+                // Randomize properties
+                const left = Math.random() * 100 + 'vw';
+                const animationDuration = Math.random() * 3 + 2 + 's';
+                const animationDelay = Math.random() * 2 + 's';
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                confetti.style.left = left;
+                confetti.style.animationDuration = animationDuration;
+                confetti.style.animationDelay = animationDelay;
+                confetti.style.backgroundColor = color;
+                
+                container.appendChild(confetti);
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tutor Access - MathQuest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#414754",
+                      "inverse-primary": "#adc7ff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-surface": "#121c2a",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed": "#250059",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#d3bbff",
+                      "on-primary-fixed-variant": "#004493",
+                      "on-secondary-fixed": "#002113",
+                      "outline-variant": "#c1c6d7",
+                      "primary-fixed": "#d8e2ff",
+                      "tertiary": "#712edd",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#0070ea",
+                      "secondary": "#006c49",
+                      "inverse-surface": "#27313f",
+                      "surface-variant": "#d9e3f6",
+                      "tertiary-fixed": "#ebddff",
+                      "secondary-container": "#6cf8bb",
+                      "surface-container-high": "#dee9fc",
+                      "inverse-on-surface": "#eaf1ff",
+                      "primary": "#0059bb",
+                      "surface": "#f8f9ff",
+                      "on-primary-fixed": "#001a41",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "surface-tint": "#005bc0",
+                      "outline": "#717786",
+                      "surface-dim": "#d0dbed",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "surface-container-highest": "#d9e3f6",
+                      "on-secondary-container": "#00714d",
+                      "on-tertiary-container": "#fffbff",
+                      "primary-fixed-dim": "#adc7ff",
+                      "on-primary-container": "#fefcff",
+                      "on-tertiary-fixed-variant": "#5b00c5",
+                      "tertiary-container": "#8b4ef7",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#e6eeff",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#121c2a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "4px",
+                      "gutter": "24px",
+                      "base": "16px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "code-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .math-shadow-sm { box-shadow: 0 4px 8px rgba(0, 89, 187, 0.05); }
+        .math-shadow-md { box-shadow: 0 8px 16px rgba(0, 89, 187, 0.1); }
+        
+        #gate-overlay {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col relative overflow-hidden">
+<!-- Tutor Gate Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface/90 transition-opacity duration-300" id="gate-overlay">
+<div class="bg-surface-container-lowest p-8 rounded-xl math-shadow-md w-full max-w-md mx-4 border border-outline-variant text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">security</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Tutor Access Verification</h2>
+<p class="text-on-surface-variant mb-6">Please solve the following to access pedagogical details.</p>
+<div class="bg-surface-container py-6 px-4 rounded-lg mb-6 border border-primary-fixed">
+<span class="font-display-lg text-display-lg text-primary block mb-4">7 × 8 = ?</span>
+<input class="w-full h-12 bg-surface-container-lowest border border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-center font-code-sm text-code-sm text-on-surface" id="gate-answer" placeholder="Enter answer" type="number"/>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:bg-surface-tint active:scale-95 transition-all math-shadow-sm" id="gate-submit">
+                Verify Access
+            </button>
+<p class="text-error mt-4 hidden text-sm" id="gate-error">Incorrect answer. Please try again.</p>
+</div>
+</div>
+<!-- Main Content (Hidden until unlocked) -->
+<div class="flex-1 flex flex-col opacity-0 pointer-events-none transition-opacity duration-500 h-screen overflow-y-auto" id="main-content">
+<!-- Header -->
+<header class="bg-surface border-b border-outline-variant shadow-sm w-full sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-base py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Pedagogical Overview</h1>
+<span class="text-on-surface-variant font-code-sm text-code-sm">Module: Early Number Sense</span>
+</div>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors px-4 py-2 border border-outline-variant rounded hover:bg-surface-container-low" onclick="window.location.reload()">
+<span class="material-symbols-outlined">logout</span>
+                    Exit Tutor Mode
+                </button>
+</div>
+</header>
+<main class="flex-1 w-full max-w-container-max mx-auto px-4 md:px-base py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Justification & Milestones -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Pedagogical Justification Card -->
+<section class="bg-surface-container-lowest rounded-xl math-shadow-sm p-6 border border-outline-variant relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed opacity-20 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-4 border-b border-surface-container pb-4">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">Pedagogical Justification</h2>
+</div>
+<div class="prose text-on-surface-variant max-w-none">
+<p class="mb-4">
+                                The current module focuses on solidifying foundational numerical cognition through exercises designed to strengthen 
+                                <strong class="text-primary">Subitizing</strong> and <strong class="text-primary">Cardinality</strong>.
+                            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+<div class="bg-surface-container-low p-4 rounded-lg border border-surface-variant">
+<h4 class="font-bold text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">visibility</span>
+                                        Conceptual Subitizing
+                                    </h4>
+<p class="text-sm">Activities require rapid recognition of clustered quantities (dots, objects) without conscious counting, essential for future arithmetic fluency.</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-surface-variant">
+<h4 class="font-bold text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">numbers</span>
+                                        Cardinal Principle
+                                    </h4>
+<p class="text-sm">Tasks reinforce understanding that the final number counted represents the total set size, shifting focus from rote sequence to set magnitude.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Conceptual Milestones (Traffic Light System) -->
+<section class="bg-surface-container-lowest rounded-xl math-shadow-sm p-6 border border-outline-variant">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">traffic</span>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">Conceptual Milestones</h2>
+</div>
+<div class="space-y-4 relative">
+<!-- Connector Line -->
+<div class="absolute left-6 top-6 bottom-6 w-[2px] bg-surface-container-high z-0"></div>
+<!-- Milestone 1 (Achieved) -->
+<div class="flex items-start gap-4 relative z-10 bg-surface-container-lowest p-4 rounded-lg border border-surface-variant hover:border-secondary transition-colors">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-on-secondary-container">check</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface flex items-center gap-2">
+                                        One-to-One Correspondence
+                                        <span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-xs rounded-full font-code-sm">Mastered</span>
+</h3>
+<p class="text-on-surface-variant text-sm mt-1">Consistently assigns exactly one number word to each object in a set.</p>
+</div>
+</div>
+<!-- Milestone 2 (In Progress) -->
+<div class="flex items-start gap-4 relative z-10 bg-surface-container-lowest p-4 rounded-lg border border-primary-fixed shadow-[0_0_12px_rgba(0,112,234,0.1)]">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 border-2 border-surface-container-lowest animate-pulse">
+<span class="material-symbols-outlined text-on-primary-container">sync</span>
+</div>
+<div>
+<h3 class="font-bold text-on-surface flex items-center gap-2">
+                                        Stable Order Principle
+                                        <span class="px-2 py-0.5 bg-primary-container text-on-primary-container text-xs rounded-full font-code-sm">Current Focus</span>
+</h3>
+<p class="text-on-surface-variant text-sm mt-1">Reciting number words in the correct, consistent order. Errors noted past number 14.</p>
+<!-- Progress Bar -->
+<div class="mt-4 w-full bg-primary-fixed/30 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%] rounded-full"></div>
+</div>
+<div class="text-right text-xs text-on-surface-variant mt-1 font-code-sm">65% Consistency</div>
+</div>
+</div>
+<!-- Milestone 3 (Not Started) -->
+<div class="flex items-start gap-4 relative z-10 bg-surface-container-lowest p-4 rounded-lg border border-outline-variant/30 opacity-70">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center flex-shrink-0 border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-outline">lock</span>
+</div>
+<div>
+<h3 class="font-bold text-outline flex items-center gap-2">
+                                        Abstraction Principle
+                                    </h3>
+<p class="text-outline text-sm mt-1">Understanding that any collection of objects, tangible or abstract, can be counted.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Offline Activities & Stats -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Offline Activities -->
+<section class="bg-surface-container-lowest rounded-xl math-shadow-sm p-6 border-t-2 border-t-tertiary border-x border-b border-outline-variant">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 1;">nature_people</span>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">Offline Activities</h2>
+</div>
+<p class="text-sm text-on-surface-variant mb-4">Recommended real-world exercises to reinforce current conceptual targets.</p>
+<ul class="space-y-3">
+<li class="bg-surface-container p-3 rounded border border-surface-variant flex gap-3 items-start hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">restaurant</span>
+<div>
+<strong class="text-sm text-on-surface block">Setting the Table</strong>
+<span class="text-xs text-on-surface-variant">Reinforces 1:1 correspondence. Ask: "Do we have enough forks for everyone?"</span>
+</div>
+</li>
+<li class="bg-surface-container p-3 rounded border border-surface-variant flex gap-3 items-start hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">directions_car</span>
+<div>
+<strong class="text-sm text-on-surface block">Car Spotting</strong>
+<span class="text-xs text-on-surface-variant">Practices stable order up to 20. Count red cars during a drive.</span>
+</div>
+</li>
+<li class="bg-surface-container p-3 rounded border border-surface-variant flex gap-3 items-start hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mt-0.5 text-xl">inventory_2</span>
+<div>
+<strong class="text-sm text-on-surface block">Toy Sorting</strong>
+<span class="text-xs text-on-surface-variant">Builds conceptual subitizing. Group blocks in sets of 2, 3, or 4.</span>
+</div>
+</li>
+</ul>
+</section>
+<!-- Technical Stats (Minimal) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant">
+<h3 class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider mb-4 border-b border-surface-variant pb-2">Session Metrics</h3>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="block text-xs text-on-surface-variant mb-1">Avg Response Time</span>
+<span class="font-code-sm text-on-surface text-lg">3.2s</span>
+</div>
+<div>
+<span class="block text-xs text-on-surface-variant mb-1">Error Rate (Current Focus)</span>
+<span class="font-code-sm text-error text-lg">18%</span>
+</div>
+<div>
+<span class="block text-xs text-on-surface-variant mb-1">Active Time (Week)</span>
+<span class="font-code-sm text-on-surface text-lg">45m</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gateOverlay = document.getElementById('gate-overlay');
+            const mainContent = document.getElementById('main-content');
+            const submitBtn = document.getElementById('gate-submit');
+            const inputField = document.getElementById('gate-answer');
+            const errorMsg = document.getElementById('gate-error');
+
+            function checkAnswer() {
+                if (inputField.value === '56') {
+                    gateOverlay.classList.add('opacity-0');
+                    setTimeout(() => {
+                        gateOverlay.style.display = 'none';
+                        mainContent.classList.remove('opacity-0', 'pointer-events-none');
+                    }, 300);
+                } else {
+                    errorMsg.classList.remove('hidden');
+                    inputField.classList.add('border-error', 'ring-error');
+                    setTimeout(() => {
+                        inputField.classList.remove('border-error', 'ring-error');
+                    }, 2000);
+                }
+            }
+
+            submitBtn.addEventListener('click', checkAnswer);
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') checkAnswer();
+            });
+            
+            // For demo purposes, auto-focus input
+            inputField.focus();
+        });
+    </script>
+</body></html>

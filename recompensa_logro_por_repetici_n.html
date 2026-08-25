@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - ¡Celebración!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#121c2a",
+                    "secondary": "#006c49",
+                    "primary": "#0059bb",
+                    "surface-container-low": "#eff4ff",
+                    "background": "#f8f9ff",
+                    "outline-variant": "#c1c6d7",
+                    "tertiary-fixed-dim": "#d3bbff",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#8b4ef7",
+                    "on-background": "#121c2a",
+                    "surface": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#adc7ff",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary-fixed": "#250059",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "surface-tint": "#005bc0",
+                    "surface-container-highest": "#d9e3f6",
+                    "outline": "#717786",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#6ffbbe",
+                    "inverse-primary": "#adc7ff",
+                    "surface-container": "#e6eeff",
+                    "secondary-container": "#6cf8bb",
+                    "surface-container-high": "#dee9fc",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "on-tertiary-container": "#fffbff",
+                    "on-surface-variant": "#414754",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "tertiary-fixed": "#ebddff",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#fefcff",
+                    "surface-dim": "#d0dbed",
+                    "on-primary-fixed": "#001a41",
+                    "tertiary": "#712edd",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-tertiary-fixed-variant": "#5b00c5",
+                    "surface-variant": "#d9e3f6",
+                    "primary-container": "#0070ea",
+                    "surface-bright": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "base": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "code-sm": [
+                            "JetBrains Mono"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "code-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8)); transform: scale(1.05); }
+        }
+        @keyframes pop-in {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes slide-up {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .animate-pop-in { animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        .animate-slide-up { animation: slide-up 0.5s ease-out forwards; }
+        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        .sun-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 215, 0, 0.2) 15deg, transparent 30deg);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-center items-center overflow-hidden font-body-md">
+<!-- Confetti Canvas (Decorative) -->
+<canvas class="fixed inset-0 pointer-events-none z-0" id="confetti-canvas"></canvas>
+<!-- Main Content Container -->
+<main class="relative z-10 flex flex-col items-center justify-center w-full max-w-lg px-margin-mobile py-8 mx-auto h-screen text-center">
+<!-- Dynamic Reward Area -->
+<div class="relative w-64 h-64 md:w-80 md:h-80 mb-8 animate-pop-in">
+<!-- Rotating Rays Background -->
+<div class="sun-rays animate-spin-slow"></div>
+<!-- Central Sun/Badge Character -->
+<div class="absolute inset-0 flex items-center justify-center z-10 animate-float">
+<div class="relative w-48 h-48 md:w-56 md:h-56 bg-secondary-fixed rounded-full shadow-[0_8px_30px_rgba(111,251,190,0.4)] border-4 border-white flex flex-col items-center justify-center">
+<!-- Smiling Face Elements -->
+<div class="flex gap-4 mb-2">
+<div class="w-4 h-6 bg-on-secondary-fixed rounded-full"></div>
+<div class="w-4 h-6 bg-on-secondary-fixed rounded-full"></div>
+</div>
+<div class="w-12 h-6 border-b-4 border-on-secondary-fixed rounded-b-full"></div>
+<!-- Decorative cheeks -->
+<div class="absolute left-8 top-24 w-4 h-4 bg-error-container rounded-full opacity-60"></div>
+<div class="absolute right-8 top-24 w-4 h-4 bg-error-container rounded-full opacity-60"></div>
+</div>
+</div>
+<!-- Surrounding Stars (Repetitions) -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 animate-pop-in delay-200">
+<div class="star w-12 h-12 bg-yellow-400 animate-pulse-glow shadow-lg"></div>
+</div>
+<div class="absolute top-1/2 -left-4 -translate-y-1/2 z-20 animate-pop-in delay-300">
+<div class="star w-12 h-12 bg-yellow-400 animate-pulse-glow shadow-lg"></div>
+</div>
+<div class="absolute top-1/2 -right-4 -translate-y-1/2 z-20 animate-pop-in delay-400">
+<div class="star w-12 h-12 bg-yellow-400 animate-pulse-glow shadow-lg"></div>
+</div>
+</div>
+<!-- Clear Feedback Text -->
+<h1 class="font-display-lg text-display-lg md:text-[64px] md:leading-[72px] text-primary mb-4 animate-slide-up delay-100 opacity-0 px-4">
+            ¡Lo hiciste <br/><span class="text-secondary font-black inline-block transform scale-110">3 veces!</span>
+</h1>
+<!-- Significant Reward Asset (Medal) -->
+<div class="mt-4 mb-12 animate-slide-up delay-300 opacity-0">
+<div class="relative w-24 h-24 mx-auto animate-float" style="animation-delay: 1s;">
+<div class="absolute inset-0 bg-yellow-400 rounded-full shadow-[0_4px_15px_rgba(250,204,21,0.5)] border-4 border-white flex items-center justify-center">
+<span class="font-display-lg text-[40px] text-white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.2);">1</span>
+</div>
+<!-- Ribbon tails -->
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-error rounded-b-lg -z-10 shadow-sm" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);"></div>
+</div>
+</div>
+<!-- Navigation Button -->
+<button class="w-full max-w-sm mt-auto md:mt-8 h-20 bg-primary text-on-primary rounded-full shadow-[0_8px_20px_rgba(0,89,187,0.3)] hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all duration-200 flex items-center justify-center gap-4 animate-slide-up delay-500 opacity-0 group focus:outline-none focus:ring-4 focus:ring-primary-fixed">
+<span class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">Continuar</span>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-2 transition-transform" data-icon="arrow_forward" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+</main>
+<script>
+        // Simple Confetti Effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const confettiCount = 100;
+            const confetti = [];
+            const colors = ['#0059bb', '#6cf8bb', '#fefcff', '#ffdad6', '#ffd700'];
+
+            for (let i = 0; i < confettiCount; i++) {
+                confetti.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    r: Math.random() * 6 + 4,
+                    dx: Math.random() * 2 - 1,
+                    dy: Math.random() * 3 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    tilt: Math.floor(Math.random() * 10) - 10,
+                    tiltAngleInc: (Math.random() * 0.07) + 0.05,
+                    tiltAngle: 0
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < confettiCount; i++) {
+                    const c = confetti[i];
+                    ctx.beginPath();
+                    ctx.lineWidth = c.r;
+                    ctx.strokeStyle = c.color;
+                    ctx.moveTo(c.x + c.tilt + c.r, c.y);
+                    ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r);
+                    ctx.stroke();
+                }
+                update();
+                requestAnimationFrame(draw);
+            }
+
+            function update() {
+                for (let i = 0; i < confettiCount; i++) {
+                    const c = confetti[i];
+                    c.tiltAngle += c.tiltAngleInc;
+                    c.y += (Math.cos(c.tiltAngle) + 1 + c.r / 2) / 2;
+                    c.x += Math.sin(c.tiltAngle) * 2;
+
+                    if (c.y > canvas.height) {
+                        c.y = -20;
+                        c.x = Math.random() * canvas.width;
+                    }
+                }
+            }
+
+            // Start animation after a slight delay to match UI pop-in
+            setTimeout(() => {
+                draw();
+            }, 500);
+        });
+    </script>
+</body></html>

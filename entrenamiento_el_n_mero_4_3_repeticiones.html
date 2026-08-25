@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MathQuest - Entrenamiento del Número 4</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#27313f",
+                        "on-surface": "#121c2a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed-variant": "#5b00c5",
+                        "tertiary-fixed-dim": "#d3bbff",
+                        "surface-container-low": "#eff4ff",
+                        "background": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#250059",
+                        "surface-tint": "#005bc0",
+                        "tertiary": "#712edd",
+                        "surface-dim": "#d0dbed",
+                        "surface-container": "#e6eeff",
+                        "secondary": "#006c49",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "on-surface-variant": "#414754",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ebddff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-container": "#0070ea",
+                        "on-primary-fixed": "#001a41",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c1c6d7",
+                        "error-container": "#ffdad6",
+                        "on-background": "#121c2a",
+                        "primary": "#0059bb",
+                        "on-secondary-container": "#00714d",
+                        "inverse-primary": "#adc7ff",
+                        "tertiary-container": "#8b4ef7",
+                        "outline": "#717786",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "surface-container-highest": "#d9e3f6",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-variant": "#d9e3f6",
+                        "surface-container-high": "#dee9fc",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-container": "#fefcff",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "base": "16px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Keyframe Animations for Gamified Feel */
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 112, 234, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 112, 234, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 112, 234, 0); }
+        }
+        .animate-pop {
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        .animate-pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        /* High Contrast adjustments for target demographic */
+        .high-contrast-text {
+            color: #121c2a; /* on-background */
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Mobile Bottom Nav is hidden on linear task flow) -->
+<!-- Suppressed navigation shell based on linear task logic (Practice Module) -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile md:p-gutter max-w-container-max mx-auto w-full relative h-screen">
+<!-- Pedagogical Justification Button (Top Right) -->
+<button aria-label="Justificación Pedagógica" class="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant transition-colors z-10 shadow-sm" title="Justificación Pedagógica">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span class="font-body-md text-code-sm hidden md:inline">Pedagogía</span>
+</button>
+<!-- Progress Indicator (3 Empty Stars) -->
+<div class="absolute top-8 left-1/2 -translate-x-1/2 flex gap-4 z-10 animate-pop">
+<span class="material-symbols-outlined text-[48px] text-outline-variant" data-icon="star" data-weight="outline">star</span>
+<span class="material-symbols-outlined text-[48px] text-outline-variant" data-icon="star" data-weight="outline">star</span>
+<span class="material-symbols-outlined text-[48px] text-outline-variant" data-icon="star" data-weight="outline">star</span>
+</div>
+<!-- Main Content Area (Glassmorphism Card) -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-md shadow-lg rounded-2xl w-full max-w-3xl flex flex-col items-center p-8 md:p-12 border border-surface-container-highest animate-pop mt-16" style="animation-delay: 0.1s; border-top: 4px solid #0059bb;">
+<!-- Instruction Text -->
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-primary text-center mb-8 high-contrast-text">
+                Presiona el 4 tres veces
+            </h1>
+<!-- Visual Representation (4 Objects & Large Number) -->
+<div class="flex flex-col md:flex-row items-center justify-center gap-12 mb-12 w-full">
+<!-- The Number -->
+<div class="text-[120px] md:text-[160px] font-display-lg leading-none text-primary font-black animate-pulse-glow rounded-3xl p-4 bg-primary-container/10">
+                    4
+                </div>
+<!-- The Objects -->
+<div class="grid grid-cols-2 gap-4">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-sm bg-surface-container-low flex items-center justify-center">
+<img class="w-full h-full object-cover p-2" data-alt="A vivid, high-contrast illustration of a bright red balloon floating against a pristine white background. The style is clean gamification, using flat vector graphics with subtle shading to give a tactile feel. The lighting is bright and cheerful, designed for maximum visibility and engagement in a light-mode educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC72uAX0pb4d-cf6TXqWqG-PvSbccsN0YWymbgRjjvx4cwj7MjDLndI1Xv--wYc3NV4gNnxjNr7I1VQ0ewUVBTkcJWnzzkXXPvXcQJf2tuOEPgmwZ4j3qZ63ap7_jb0orHNYBoG5Gf0S7nGTXN0xO4tSqgnH0Czqxjed-AazDmgkmfepOGxPJVJ_qft78C6Dyrew2pngzifkWjBOXD4iaVOdz64uKtLu0Yqi0pkzFVFL5jeD6QQPcpC"/>
+</div>
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-sm bg-surface-container-low flex items-center justify-center">
+<img class="w-full h-full object-cover p-2" data-alt="A vivid, high-contrast illustration of a bright red balloon floating against a pristine white background. The style is clean gamification, using flat vector graphics with subtle shading to give a tactile feel. The lighting is bright and cheerful, designed for maximum visibility and engagement in a light-mode educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGGmTCcQxM8bhkLP26Zs2iKbRhEL0rUSVwsyS4F_CA6ia_YFMKm9c8EnGce57Y8miKLw04Q-BUjsfgzrb1XJdZpBNLtAS2fnZm7rUeR3nD0C0DtrhFpqPuSxRFmoEMy9cDUxuO0mJSK_j-yend9YAz7ovdBIyiUrws1QLkcY2VeMgilZEpA9MTgHHgTXiQCr7Tqg-mR_YBH50QVG_qWJdHa1GSNjnkYSG4vFtBrpdcKgAIvtFHhskc"/>
+</div>
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-sm bg-surface-container-low flex items-center justify-center">
+<img class="w-full h-full object-cover p-2" data-alt="A vivid, high-contrast illustration of a bright red balloon floating against a pristine white background. The style is clean gamification, using flat vector graphics with subtle shading to give a tactile feel. The lighting is bright and cheerful, designed for maximum visibility and engagement in a light-mode educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdDHZQO-ZJkh__RT8vN2xYAeHZD6BPmbohOEY4nS2HJPAXVdtW1YQZIhOgShl8WObbFL-kxWJCtN-_TcNAN3ZpF5gL2fvdtCuytP-Jd6aRcSjXFz2l_AoUR9qnDyjm_V71PDHPMXsjI6JNIcn3vULHIPdcEzdzmGMqQrIWtQo4tYE0GQOFDnNmWFpWA9s7IT_7cU1ViAvBVdHi_GZlBg4VsLu9WeNblbP0FQKbhmYX2NGdKIkvcd_1"/>
+</div>
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-sm bg-surface-container-low flex items-center justify-center">
+<img class="w-full h-full object-cover p-2" data-alt="A vivid, high-contrast illustration of a bright red balloon floating against a pristine white background. The style is clean gamification, using flat vector graphics with subtle shading to give a tactile feel. The lighting is bright and cheerful, designed for maximum visibility and engagement in a light-mode educational app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJgfNNwJtQJl-WckMfWtMRIYqyMTqdaFrgO3rorAGb0IPGnZlWI8QFIZIhaxaLWDYwpuLuevEpR6_BxAgz87_fQjqU9GMJj5rfIMZF5lke2GBSk7UvQsepJ4_myR7-ELBYoCl2XcfxdozNumdJkiJhixHHWe0gj8LiNrfQ29x4N4st8Mbp-4WXspWlhCdwSxOGYaZp0LzdyQIsOzppWV3YKMa0BLQXRJP0QSigrth21-GttIqMVtgX"/>
+</div>
+</div>
+</div>
+<!-- Jumbo Keypad -->
+<div class="flex flex-wrap justify-center gap-4 w-full max-w-2xl">
+<!-- Button 1 -->
+<button class="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-surface-container text-on-surface-variant font-headline-lg text-4xl shadow-sm hover:bg-surface-variant hover:shadow-md transition-all active:scale-95 border-b-4 border-surface-container-highest">
+                    1
+                </button>
+<!-- Button 2 -->
+<button class="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-surface-container text-on-surface-variant font-headline-lg text-4xl shadow-sm hover:bg-surface-variant hover:shadow-md transition-all active:scale-95 border-b-4 border-surface-container-highest">
+                    2
+                </button>
+<!-- Button 3 -->
+<button class="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-surface-container text-on-surface-variant font-headline-lg text-4xl shadow-sm hover:bg-surface-variant hover:shadow-md transition-all active:scale-95 border-b-4 border-surface-container-highest">
+                    3
+                </button>
+<!-- Target Button (4) - Jumbo & High Contrast -->
+<button class="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-primary text-on-primary font-display-lg text-6xl shadow-[0_8px_16px_-4px_rgba(0,89,187,0.4)] hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-90 border-b-8 border-on-primary-fixed-variant animate-pulse-glow flex-shrink-0 z-10" id="btn-4">
+                    4
+                </button>
+<!-- Button 5 -->
+<button class="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-surface-container text-on-surface-variant font-headline-lg text-4xl shadow-sm hover:bg-surface-variant hover:shadow-md transition-all active:scale-95 border-b-4 border-surface-container-highest">
+                    5
+                </button>
+</div>
+</div>
+</main>
+<script>
+        // Simple Interaction Logic for Demonstration
+        const targetBtn = document.getElementById('btn-4');
+        const stars = document.querySelectorAll('[data-icon="star"]');
+        let clickCount = 0;
+
+        if(targetBtn) {
+            targetBtn.addEventListener('click', () => {
+                if(clickCount < 3) {
+                    // Update Star
+                    stars[clickCount].classList.add('fill', 'text-secondary');
+                    stars[clickCount].classList.remove('text-outline-variant');
+                    stars[clickCount].style.animation = 'popIn 0.3s ease-out forwards';
+                    
+                    clickCount++;
+                    
+                    // Gamified Feedback on Button
+                    targetBtn.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        targetBtn.style.transform = '';
+                    }, 150);
+
+                    // Success State
+                    if(clickCount === 3) {
+                        setTimeout(() => {
+                            alert("¡Excelente! Has completado el entrenamiento del número 4.");
+                            // Reset for demo purposes
+                            clickCount = 0;
+                            stars.forEach(star => {
+                                star.classList.remove('fill', 'text-secondary');
+                                star.classList.add('text-outline-variant');
+                                star.style.animation = '';
+                            });
+                        }, 500);
+                    }
+                }
+            });
+        }
+    </script>
+</body></html>
