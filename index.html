@@ -212,7 +212,125 @@
 <a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">See it in action <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 <div class="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-xl border-4 border-surface rotate-3 group-hover:rotate-0 transition-all duration-300">
-<img class="w-full h-full object-cover" data-alt="A 3D claymation character..." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<!-- ANIMACION 3D FIN -->
+<!-- 3D Interactive Character Container -->
+<div id="hero-3d-container" class="w-full h-full bg-transparent"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<script>
+(function() {
+  const container = document.getElementById('hero-3d-container');
+  if (!container) return;
+  
+  const width = container.clientWidth || 400;
+  const height = container.clientHeight || 500;
+  
+  // Scene setup
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(renderer.domElement);
+  
+  // Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(5, 5, 5);
+  scene.add(directionalLight);
+  
+  // Character Group
+  const character = new THREE.Group();
+  
+  // Body (blue blob)
+  const bodyGeo = new THREE.SphereGeometry(1, 32, 32);
+  const bodyMat = new THREE.MeshPhongMaterial({ color: 0x007bff, shininess: 100 });
+  const body = new THREE.Mesh(bodyGeo, bodyMat);
+  body.scale.set(1, 1.2, 0.8);
+  character.add(body);
+  
+  // Eyes
+  const eyeGeo = new THREE.SphereGeometry(0.15, 16, 16);
+  const eyeMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+  const leftEye = new THREE.Mesh(eyeGeo, eyeMat);
+  leftEye.position.set(-0.3, 0.5, 0.7);
+  character.add(leftEye);
+  const rightEye = new THREE.Mesh(eyeGeo, eyeMat);
+  rightEye.position.set(0.3, 0.5, 0.7);
+  character.add(rightEye);
+  
+  // Mouth (smile)
+  const mouthGeo = new THREE.TorusGeometry(0.1, 0.05, 16, 32, Math.PI);
+  const mouthMat = new THREE.MeshBasicMaterial({ color: 0x000000 });
+  const mouth = new THREE.Mesh(mouthGeo, mouthMat);
+  mouth.position.set(0, 0.2, 0.75);
+  mouth.rotation.x = Math.PI;
+  character.add(mouth);
+  
+  character.position.y = 1;
+  scene.add(character);
+  
+  // Numbers (1, 2, 3)
+  const createNum = (color, x) => {
+    const geo = new THREE.BoxGeometry(0.6, 1, 0.4);
+    const mat = new THREE.MeshPhongMaterial({ color: color });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(x, -1, 0);
+    scene.add(mesh);
+    return mesh;
+  };
+  
+  const num1 = createNum(0xff4d4d, -2);
+  const num2 = createNum(0x4dff4d, 0);
+  const num3 = createNum(0x4d4dff, 2);
+  
+  // Particles
+  const particleCount = 50;
+  const particlesGeo = new THREE.BufferGeometry();
+  const posArray = new Float32Array(particleCount * 3);
+  for(let i=0; i<particleCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+  }
+  particlesGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const particlesMat = new THREE.PointsMaterial({ size: 0.1, color: 0xffff00 });
+  const particleMesh = new THREE.Points(particlesGeo, particlesMat);
+  scene.add(particleMesh);
+  
+  camera.position.z = 5;
+  
+  // Animation
+  let clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+    
+    character.position.y = Math.abs(Math.sin(t * 3)) * 2;
+    character.rotation.y = Math.sin(t) * 0.2;
+    
+    num1.position.y = Math.sin(t * 2) * 0.2 - 1;
+    num2.position.y = Math.sin(t * 2 + 1) * 0.2 - 1;
+    num3.position.y = Math.sin(t * 2 + 2) * 0.2 - 1;
+    
+    particleMesh.rotation.y += 0.01;
+    particleMesh.position.y -= 0.02;
+    if(particleMesh.position.y < -5) particleMesh.position.y = 5;
+    
+    renderer.render(scene, camera);
+  }
+  animate();
+  
+  // Responsive
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth || 400;
+    const h = container.clientHeight || 500;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+  });
+})();
+</script>
+<!-- ANIMACION 3D FIN -->
 </div>
 </div>
 </div>
